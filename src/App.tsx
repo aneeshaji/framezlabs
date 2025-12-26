@@ -34,10 +34,13 @@ function AnimatedRoutes() {
   );
 }
 
+import { SEO } from './components/SEO';
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <SEO />
       <div className="app" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
         <main style={{ flex: 1 }}>
