@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Send, Phone, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export const EnquiryForm = ({ productName = "" }: { productName?: string }) => {
+export const EnquiryForm = ({ productName = "", minimal = false }: { productName?: string, minimal?: boolean }) => {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -46,19 +46,19 @@ export const EnquiryForm = ({ productName = "" }: { productName?: string }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card"
+            className={minimal ? "" : "card"}
             style={{
-                padding: '2rem',
-                backgroundColor: 'white',
+                padding: minimal ? '0' : '2rem',
+                backgroundColor: minimal ? 'transparent' : 'white',
                 maxWidth: '500px',
                 margin: '0 auto',
-                boxShadow: 'var(--shadow-lg)',
+                boxShadow: minimal ? 'none' : 'var(--shadow-lg)',
                 position: 'relative',
                 overflow: 'hidden'
             }}
         >
             <div className="text-center" style={{ marginBottom: '2rem' }}>
-                <h3 className="text-teal" style={{ marginBottom: '0.5rem' }}>Get a Free Quote</h3>
+                <h3 className="text-teal" style={{ marginBottom: '0.5rem' }}>{minimal ? "Get Your Quote" : "Get a Free Quote"}</h3>
                 <p style={{ fontSize: '0.9rem', color: '#666' }}>Fill out the form and we'll get back to you via email/phone.</p>
             </div>
 

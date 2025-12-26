@@ -14,6 +14,7 @@ import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ShippingPolicy from './pages/ShippingPolicy';
 import RefundPolicy from './pages/RefundPolicy';
+import { Shop } from './pages/Shop';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
 
@@ -24,6 +25,7 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/contact" element={<Contact />} />
@@ -43,6 +45,9 @@ function AnimatedRoutes() {
 import { SEO } from './components/SEO';
 import { StickyWhatsApp } from './components/StickyWhatsApp';
 
+import { FloatingQuoteButton } from './components/FloatingQuoteButton';
+import { ExitIntentPopup } from './components/ExitIntentPopup';
+
 function App() {
   return (
     <Router>
@@ -51,6 +56,8 @@ function App() {
       <div className="app" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
         <StickyWhatsApp />
+        <FloatingQuoteButton />
+        <ExitIntentPopup />
         <main style={{ flex: 1 }}>
           <AnimatedRoutes />
         </main>

@@ -47,17 +47,19 @@ export const Footer = () => {
                                         width: '45px',
                                         height: '45px',
                                         borderRadius: '50%',
-                                        display: 'flex',
+                                        display: 'inline-flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         backdropFilter: 'blur(10px)',
                                         border: '1px solid rgba(255,255,255,0.1)',
-                                        transition: 'all 0.3s ease'
+                                        transition: 'all 0.3s ease',
+                                        flexShrink: 0,
+                                        textDecoration: 'none'
                                     }}
                                 >
-                                    <motion.div variants={iconBounce}>
+                                    <motion.span variants={iconBounce} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                         {social.icon}
-                                    </motion.div>
+                                    </motion.span>
                                 </motion.a>
                             ))}
                         </div>

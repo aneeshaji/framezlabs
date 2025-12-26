@@ -239,3 +239,16 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 .hover-gold:hover {
   color: var(--color-gold);
 }
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .hidden-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .hidden-desktop {
+        display: none !important;
+    }
+}

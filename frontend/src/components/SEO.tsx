@@ -8,12 +8,12 @@ interface SEOProps {
   url?: string;
 }
 
-export const SEO = ({ 
-  title = "FramezLabs | Custom Photo Frames & Gifts", 
+export const SEO = ({
+  title = "FramezLabs | Custom Photo Frames & Gifts",
   description = "Premium customized frames, photo books, and personalized gifts. Handcrafted with love and delivered pan-India.",
   keywords = "custom frames, photo frames, personalized gifts, photo books, framezlabs, home decor, wall art",
   image = "/og-image.jpg", // Ensure you have this image in public folder or update path
-  url = window.location.href 
+  url = window.location.href
 }: SEOProps) => {
   const siteTitle = title === "FramezLabs | Custom Photo Frames & Gifts" ? title : `${title} | FramezLabs`;
 
@@ -38,8 +38,31 @@ export const SEO = ({
       <meta property="twitter:title" content={siteTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
-      
+
       <link rel="canonical" href={url} />
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "FramezLabs",
+          "url": "https://framezlabs.com",
+          "logo": "https://framezlabs.com/logo.png",
+          "description": description,
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-9995064344",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": "en"
+          },
+          "sameAs": [
+            "https://instagram.com/framez__labs",
+            "https://facebook.com/framezlabs"
+          ]
+        })}
+      </script>
     </Helmet>
   );
 };

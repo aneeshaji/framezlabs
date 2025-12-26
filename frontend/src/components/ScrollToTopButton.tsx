@@ -39,7 +39,7 @@ export const ScrollToTopButton = () => {
                     style={{
                         position: 'fixed',
                         bottom: '2rem',
-                        right: '2rem',
+                        left: '2rem', // Moved to left to avoid WhatsApp Button
                         zIndex: 100,
                         width: '3.5rem',
                         height: '3.5rem',
