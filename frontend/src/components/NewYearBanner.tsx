@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { PartyPopper, ArrowRight, Sparkles, Clock, Gift } from 'lucide-react';
+import { PartyPopper, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const NewYearBanner = () => {

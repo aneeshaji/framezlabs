@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Home, Search } from 'lucide-react';
+import { Home } from 'lucide-react';
 import { pageTransition } from '../utils/animations';
 
 export const NotFound = () => {
