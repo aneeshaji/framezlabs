@@ -7,6 +7,9 @@ import { Products } from './pages/Products';
 import { ProductDetail } from './pages/ProductDetail';
 import { Contact } from './pages/Contact';
 import { About } from './pages/About';
+import { NotFound } from './pages/NotFound';
+import { Gallery } from './pages/Gallery';
+import { FAQPage } from './pages/FAQPage';
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ShippingPolicy from './pages/ShippingPolicy';
@@ -29,12 +32,16 @@ function AnimatedRoutes() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/shipping" element={<ShippingPolicy />} />
         <Route path="/refund" element={<RefundPolicy />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
 }
 
 import { SEO } from './components/SEO';
+import { StickyWhatsApp } from './components/StickyWhatsApp';
 
 function App() {
   return (
@@ -43,6 +50,7 @@ function App() {
       <SEO />
       <div className="app" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
+        <StickyWhatsApp />
         <main style={{ flex: 1 }}>
           <AnimatedRoutes />
         </main>

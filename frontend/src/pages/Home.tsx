@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { CATEGORIES } from '../data/products';
 import { EnquiryForm } from '../components/EnquiryForm';
 import { FAQ } from '../components/FAQ';
+import { NewYearBanner } from '../components/NewYearBanner';
 import { pageTransition, fadeInUp, staggerContainer, scaleIn, floating, iconBounce, iconJiggle } from "../utils/animations";
 
 export const Home = () => {
@@ -19,7 +20,7 @@ export const Home = () => {
             <section
                 className="hero"
                 style={{
-                    minHeight: '90vh',
+                    minHeight: '85vh', // Reduced slightly to account for banner
                     display: 'flex',
                     alignItems: 'center',
                     position: 'relative',
@@ -27,6 +28,7 @@ export const Home = () => {
                     backgroundColor: 'var(--color-bg-main)'
                 }}
             >
+
                 {/* Mesh Gradient Background - Dark Mode Optimized */}
                 <div style={{
                     position: 'absolute',
@@ -132,6 +134,9 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* New Year Offer Banner */}
+            <NewYearBanner />
 
             {/* Trust Bar - Redesigned for Premium Feel */}
             <div style={{
@@ -290,7 +295,7 @@ export const Home = () => {
                         style={{ textAlign: 'center' }}
                     >
                         {[
-                            { step: "01", title: "Choose Product", desc: "Select from our wide range of frames." },
+                            { step: "01", title: "Choose Product", desc: "Select from our wide range of products." },
                             { step: "02", title: "Chat & Customize", desc: "Share your photos via WhatsApp." },
                             { step: "03", title: "Fast Delivery", desc: "Get it delivered to your doorstep." }
                         ].map((item, i) => (
@@ -464,6 +469,6 @@ export const Home = () => {
                 {/* Decorative overlay */}
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%)', zIndex: 1 }} />
             </section>
-        </motion.div>
+        </motion.div >
     );
 };

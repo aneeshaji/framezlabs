@@ -22,7 +22,7 @@ const TermsAndConditions = () => {
                         <p>FramezLabs specializes in personalized gifts. By providing images or text for customization, you confirm that you own the rights to such content or have obtained permission for its use.</p>
 
                         <h3>3. Order Confirmation</h3>
-                        <p>Orders are processed through WhatsApp. An order is considered confirmed only after the payment is completed and the design is approved by the customer.</p>
+                        <p>Order placement is through social media platforms including Instagram and Facebook and also via email enquiry. An order is considered confirmed only after the payment is completed and the design is approved by the customer.</p>
 
                         <h3>4. Pricing and Payment</h3>
                         <p>All prices are subject to change without notice. Payment must be made in full through the provided channels before production begins.</p>

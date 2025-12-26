@@ -1,7 +1,8 @@
-import { Phone, Instagram, Facebook } from 'lucide-react';
+import { Phone, Instagram, Facebook, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { iconBounce } from '../utils/animations';
+import { Newsletter } from './Newsletter';
 
 export const Footer = () => {
     return (
@@ -28,7 +29,8 @@ export const Footer = () => {
                         <p style={{ color: '#999', marginBottom: '2rem', lineHeight: '1.8', fontSize: '1rem' }}>
                             We turn your cherished moments into timeless masterpieces. Premium quality, handcrafted with passion.
                         </p>
-                        <div className="social-links" style={{ display: 'flex', gap: '1.2rem' }}>
+                        <Newsletter />
+                        <div className="social-links" style={{ display: 'flex', gap: '1.2rem', marginTop: '2rem' }}>
                             {[
                                 { icon: <Instagram size={20} />, url: "https://instagram.com/framez__labs" },
                                 { icon: <Facebook size={20} />, url: "https://www.facebook.com/share/1Bxpottkrx/" },
@@ -65,7 +67,7 @@ export const Footer = () => {
                     <div className="footer-col">
                         <h4 style={{ color: 'var(--color-white)', marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '1px' }}>Navigation</h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                            {['Home', 'Products', 'About', 'Contact'].map((link, i) => (
+                            {['Home', 'Products', 'Gallery', 'About', 'Contact', 'FAQ'].map((link, i) => (
                                 <li key={i}>
                                     <Link
                                         to={link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '')}`}
@@ -100,8 +102,17 @@ export const Footer = () => {
                                     <Facebook size={16} />
                                 </div>
                                 <a href="https://www.facebook.com/share/1Bxpottkrx/" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', fontSize: '0.95rem' }} className="hover-gold">
-                                    FramezLabs Facebook
+                                    FramezLabs
                                 </a>
+                            </li>
+                            <li className="flex items-start" style={{ gap: '0.75rem' }}>
+                                <div style={{ color: 'var(--color-gold)', backgroundColor: 'rgba(224, 122, 95, 0.1)', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', marginTop: '2px' }}>
+                                    <Mail size={16} />
+                                </div>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+                                    <a href="mailto:enquiry@framezlabs.store" style={{ color: '#aaa', fontSize: '0.95rem' }} className="hover-gold">enquiry@framezlabs.store</a>
+                                    <a href="mailto:support@framezlabs.store" style={{ color: '#aaa', fontSize: '0.95rem' }} className="hover-gold">support@framezlabs.store</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
