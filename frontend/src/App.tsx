@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -17,6 +18,8 @@ import RefundPolicy from './pages/RefundPolicy';
 import { Shop } from './pages/Shop';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
+import { OfferBanner } from './components/OfferBanner';
+import { CallbackButton } from './components/CallbackButton';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -44,25 +47,51 @@ function AnimatedRoutes() {
 
 import { SEO } from './components/SEO';
 import { StickyWhatsApp } from './components/StickyWhatsApp';
-
-import { FloatingQuoteButton } from './components/FloatingQuoteButton';
-import { ExitIntentPopup } from './components/ExitIntentPopup';
+import { QuoteModal } from './components/QuoteModal';
 
 function App() {
+  const [showAutoQuote, setShowAutoQuote] = useState(false);
+
+  useEffect(() => {
+    // Check if user has already seen the auto-popup today
+    const lastShown = localStorage.getItem('quoteAutoPopupShown');
+    const today = new Date().toDateString();
+
+    // Show if never shown before OR if last shown was on a different day
+    const shouldShow = !lastShown || lastShown !== today;
+
+    if (shouldShow) {
+      // Show quote modal after 30 seconds
+      const timer = setTimeout(() => {
+        setShowAutoQuote(true);
+        localStorage.setItem('quoteAutoPopupShown', today);
+      }, 30000);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const handleCloseQuote = () => {
+    setShowAutoQuote(false);
+  };
+
   return (
     <Router>
       <ScrollToTop />
       <SEO />
       <div className="app" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <OfferBanner />
         <Navbar />
         <StickyWhatsApp />
-        <FloatingQuoteButton />
-        <ExitIntentPopup />
+        <CallbackButton />
         <main style={{ flex: 1 }}>
           <AnimatedRoutes />
         </main>
         <Footer />
         <ScrollToTopButton />
+
+        {/* Auto-popup Quote Modal */}
+        <QuoteModal isOpen={showAutoQuote} onClose={handleCloseQuote} />
       </div>
     </Router>
   );

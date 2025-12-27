@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, Gift } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { iconPulse, revealList, fadeInUp } from "../utils/animations";
+import { QuoteModal } from './QuoteModal';
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [showQuoteModal, setShowQuoteModal] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -78,6 +80,33 @@ export const Navbar = () => {
                         </NavLink>
                     ))}
 
+                    {/* Get Free Quote Button */}
+                    <motion.button
+                        onClick={() => setShowQuoteModal(true)}
+                        whileHover={{ scale: 1.03, y: -2 }}
+                        whileTap={{ scale: 0.97 }}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            padding: '0.6rem 1.4rem',
+                            fontSize: '0.85rem',
+                            background: 'linear-gradient(135deg, #E07A5F 0%, #d66a4f 100%)',
+                            color: 'white',
+                            borderRadius: 'var(--radius-full)',
+                            fontWeight: 700,
+                            boxShadow: '0 4px 15px rgba(224, 122, 95, 0.3)',
+                            textTransform: 'none',
+                            letterSpacing: '0',
+                            marginLeft: '1rem',
+                            border: 'none',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        <Gift size={16} />
+                        <span style={{ whiteSpace: 'nowrap' }}>Get Free Quote</span>
+                    </motion.button>
+
                     <motion.a
                         href="https://wa.me/919995064344"
                         target="_blank"
@@ -97,7 +126,8 @@ export const Navbar = () => {
                             boxShadow: '0 4px 15px rgba(18, 140, 126, 0.2)',
                             textTransform: 'none',
                             letterSpacing: '0',
-                            marginLeft: '1rem'
+                            marginLeft: '0.5rem',
+                            textDecoration: 'none'
                         }}
                     >
                         <motion.div
@@ -185,6 +215,9 @@ export const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {/* Quote Modal */}
+            <QuoteModal isOpen={showQuoteModal} onClose={() => setShowQuoteModal(false)} />
         </nav>
     );
 };

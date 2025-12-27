@@ -5,6 +5,7 @@ import { EnquiryForm } from '../components/EnquiryForm';
 import { FAQ } from '../components/FAQ';
 import { NewYearBanner } from '../components/NewYearBanner';
 import { SEO } from '../components/SEO';
+import { TrustBadges } from '../components/TrustBadges';
 import { pageTransition, fadeInUp, staggerContainer, scaleIn, floating, iconBounce, iconJiggle } from "../utils/animations";
 
 export const Home = () => {
@@ -185,6 +186,9 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Trust Badges */}
+                <TrustBadges />
 
                 {/* Categories Section */}
                 <section className="section-padding" style={{ backgroundColor: 'var(--color-bg-main)' }}>
