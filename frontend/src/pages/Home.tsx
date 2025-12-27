@@ -27,7 +27,7 @@ export const Home = () => {
                 <section
                     className="hero"
                     style={{
-                        minHeight: '85vh', // Reduced slightly to account for banner
+                        minHeight: '65vh', // Reduced height as requested
                         display: 'flex',
                         alignItems: 'center',
                         position: 'relative',

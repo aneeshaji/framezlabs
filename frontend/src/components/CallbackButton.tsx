@@ -46,8 +46,8 @@ export const CallbackButton = () => {
                 onClick={() => setIsOpen(true)}
                 style={{
                     position: 'fixed',
-                    bottom: '90px',
-                    right: '20px',
+                    bottom: '7rem', // Moved up to avoid overlap with WhatsApp button (which is at 2rem)
+                    right: '2rem', // Aligned with WhatsApp button
                     width: '60px',
                     height: '60px',
                     borderRadius: '50%',
