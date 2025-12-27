@@ -61,11 +61,11 @@ function App() {
     const shouldShow = !lastShown || lastShown !== today;
 
     if (shouldShow) {
-      // Show quote modal after 30 seconds
+      // Show quote modal after 15 seconds
       const timer = setTimeout(() => {
         setShowAutoQuote(true);
         localStorage.setItem('quoteAutoPopupShown', today);
-      }, 30000);
+      }, 15000);
 
       return () => clearTimeout(timer);
     }

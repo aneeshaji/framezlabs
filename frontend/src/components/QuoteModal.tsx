@@ -15,7 +15,6 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         phone: '',
         email: '',
         category: '',
-        budget: '1000-2000',
         requirements: ''
     });
 
@@ -36,7 +35,7 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         await new Promise(resolve => setTimeout(resolve, 1500));
 
         // Send via WhatsApp
-        const message = `📋 Free Quote Request\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email || 'Not provided'}\nCategory: ${formData.category}\nBudget: ₹${formData.budget}\nRequirements: ${formData.requirements || 'None'}`;
+        const message = `📋 Free Quote Request\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email || 'Not provided'}\nCategory: ${formData.category}\nRequirements: ${formData.requirements || 'None'}`;
         const whatsappUrl = `https://wa.me/919995064344?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
 
@@ -51,7 +50,6 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
                 phone: '',
                 email: '',
                 category: '',
-                budget: '1000-2000',
                 requirements: ''
             });
         }, 3000);
@@ -234,30 +232,7 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
                                         </select>
                                     </div>
 
-                                    <div>
-                                        <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600, color: '#2D3446' }}>
-                                            Budget Range
-                                        </label>
-                                        <select
-                                            value={formData.budget}
-                                            onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                                            style={{
-                                                width: '100%',
-                                                padding: '0.875rem',
-                                                borderRadius: '10px',
-                                                border: '2px solid #e5e7eb',
-                                                fontSize: '1rem',
-                                                fontFamily: 'inherit',
-                                                backgroundColor: 'white'
-                                            }}
-                                        >
-                                            <option value="500-1000">₹500 - ₹1,000</option>
-                                            <option value="1000-2000">₹1,000 - ₹2,000</option>
-                                            <option value="2000-3000">₹2,000 - ₹3,000</option>
-                                            <option value="3000-5000">₹3,000 - ₹5,000</option>
-                                            <option value="5000+">₹5,000+</option>
-                                        </select>
-                                    </div>
+
 
                                     <div>
                                         <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600, color: '#2D3446' }}>
