@@ -1,4 +1,12 @@
+# FramezLabs Robots.txt
+# Allow all search engines to crawl the site
+
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
-Sitemap: https://framezlabs.com/sitemap.xml
+# Disallow admin or private sections (if any in future)
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://framezlabs.store/sitemap.xml

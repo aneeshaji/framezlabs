@@ -6,16 +6,99 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   url?: string;
+  type?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
 export const SEO = ({
-  title = "FramezLabs | Custom Photo Frames & Gifts",
-  description = "Premium customized frames, photo books, and personalized gifts. Handcrafted with love and delivered pan-India.",
-  keywords = "custom frames, photo frames, personalized gifts, photo books, framezlabs, home decor, wall art",
-  image = "/og-image.jpg", // Ensure you have this image in public folder or update path
-  url = window.location.href
+  title = "FramezLabs | Custom Photo Frames & Personalized Gifts India",
+  description = "Create lasting memories with premium custom photo frames, gift hampers & photo books. Handcrafted with love, delivered pan-India. Perfect for birthdays, anniversaries & special occasions.",
+  keywords = "custom photo frames, personalized gifts, photo frames online India, custom frames near me, anniversary frames, birthday photo frames, baby milestone frames, collage frames, mosaic frames, gift hampers India, photo books, handcrafted frames, premium frames, couple frames, wall art, home decor, personalized photo gifts, custom gift ideas, framezlabs",
+  image = "/og-image.jpg",
+  url = window.location.href,
+  type = "website",
+  breadcrumbs
 }: SEOProps) => {
-  const siteTitle = title === "FramezLabs | Custom Photo Frames & Gifts" ? title : `${title} | FramezLabs`;
+  const siteTitle = title.includes("FramezLabs") ? title : `${title} | FramezLabs`;
+  const absoluteImage = image.startsWith('http') ? image : `https://framezlabs.store${image}`;
+
+  // LocalBusiness Schema for better local SEO
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "FramezLabs",
+    "image": "https://framezlabs.store/logo.png",
+    "url": "https://framezlabs.store",
+    "telephone": "+91-9995064344",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN",
+      "addressRegion": "India"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "addressCountry": "IN"
+    },
+    "description": description,
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    "sameAs": [
+      "https://instagram.com/framez__labs",
+      "https://facebook.com/framezlabs"
+    ]
+  };
+
+  // WebSite Schema with SearchAction
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FramezLabs",
+    "url": "https://framezlabs.store",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://framezlabs.store/products?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  // Organization Schema
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FramezLabs",
+    "url": "https://framezlabs.store",
+    "logo": "https://framezlabs.store/logo.png",
+    "description": description,
+    "foundingDate": "2020",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9995064344",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["en", "hi"]
+    },
+    "sameAs": [
+      "https://instagram.com/framez__labs",
+      "https://facebook.com/framezlabs"
+    ]
+  };
+
+  // Breadcrumb Schema (if breadcrumbs provided)
+  const breadcrumbSchema = breadcrumbs ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.name,
+      "item": `https://framezlabs.store${crumb.url}`
+    }))
+  } : null;
 
   return (
     <Helmet>
@@ -26,43 +109,44 @@ export const SEO = ({
       <meta name="keywords" content={keywords} />
 
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={absoluteImage} />
+      <meta property="og:site_name" content="FramezLabs" />
+      <meta property="og:locale" content="en_IN" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={url} />
       <meta property="twitter:title" content={siteTitle} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={image} />
+      <meta property="twitter:image" content={absoluteImage} />
 
       <link rel="canonical" href={url} />
 
-      {/* JSON-LD Structured Data */}
+      {/* JSON-LD Structured Data - Organization */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "FramezLabs",
-          "url": "https://framezlabs.com",
-          "logo": "https://framezlabs.com/logo.png",
-          "description": description,
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+91-9995064344",
-            "contactType": "customer service",
-            "areaServed": "IN",
-            "availableLanguage": "en"
-          },
-          "sameAs": [
-            "https://instagram.com/framez__labs",
-            "https://facebook.com/framezlabs"
-          ]
-        })}
+        {JSON.stringify(organizationSchema)}
       </script>
+
+      {/* JSON-LD Structured Data - LocalBusiness */}
+      <script type="application/ld+json">
+        {JSON.stringify(localBusinessSchema)}
+      </script>
+
+      {/* JSON-LD Structured Data - WebSite */}
+      <script type="application/ld+json">
+        {JSON.stringify(websiteSchema)}
+      </script>
+
+      {/* JSON-LD Structured Data - Breadcrumbs */}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
     </Helmet>
   );
 };

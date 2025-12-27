@@ -1,150 +1,162 @@
 import { motion } from 'framer-motion';
 import { Phone, MapPin, Instagram, Mail, Sparkles } from 'lucide-react';
+import { SEO } from '../components/SEO';
 import { pageTransition, fadeInUp, revealList, iconBounce } from '../utils/animations';
 
 export const Contact = () => {
     return (
-        <motion.div
-            className="contact-page"
-            variants={pageTransition}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            style={{ backgroundColor: 'var(--color-bg-main)', minHeight: '100vh', paddingTop: '100px' }}
-        >
-            <div className="container section-padding">
-                <div className="grid grid-cols-2" style={{ gap: '4rem', gridTemplateColumns: 'minmax(300px, 1fr) 1.2fr', alignItems: 'start' }}>
+        <>
+            <SEO
+                title="Contact Us | FramezLabs Customer Support"
+                description="Get in touch with FramezLabs for custom photo frames and personalized gifts. WhatsApp, call, or email us for expert consultation. Pan-India shipping available."
+                keywords="contact framezlabs, custom frames enquiry, photo frame order, personalized gifts contact, framezlabs support, framezlabs kollam"
+                breadcrumbs={[
+                    { name: 'Home', url: '/' },
+                    { name: 'Contact', url: '/contact' }
+                ]}
+            />
+            <motion.div
+                className="contact-page"
+                variants={pageTransition}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                style={{ backgroundColor: 'var(--color-bg-main)', minHeight: '100vh', paddingTop: '100px' }}
+            >
+                <div className="container section-padding">
+                    <div className="grid grid-cols-2" style={{ gap: '4rem', gridTemplateColumns: 'minmax(300px, 1fr) 1.2fr', alignItems: 'start' }}>
 
-                    {/* Left Column: Narrative & Info */}
-                    <motion.div variants={revealList} initial="hidden" animate="visible">
-                        <motion.div variants={fadeInUp}>
-                            <h4 style={{ color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.9rem', marginBottom: '1rem' }}>Get in Touch</h4>
-                            <h1 style={{ marginBottom: '2rem', lineHeight: '1.2' }}>Let's Create a <span style={{ color: 'var(--color-gold)', fontStyle: 'italic' }}>Masterpiece</span> Together.</h1>
-                            <p style={{ color: 'var(--color-gray)', fontSize: '1.1rem', marginBottom: '3rem', maxWidth: '500px' }}>
-                                Have a question about a frame or a special milestone coming up? Reach out and our designers will help you create the perfect gift.
-                            </p>
-                        </motion.div>
-
-                        <motion.div variants={fadeInUp} className="flex flex-col gap-lg">
-                            <motion.div
-                                className="contact-method"
-                                whileHover="animate"
-                                style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}
-                            >
-                                <motion.div
-                                    variants={iconBounce}
-                                    style={{
-                                        width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'white',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-sm)',
-                                        color: 'var(--color-gold)'
-                                    }}
-                                >
-                                    <Phone size={24} />
-                                </motion.div>
-                                <div>
-                                    <h5 style={{ margin: 0, fontWeight: 700 }}>WhatsApp / Call</h5>
-                                    <a href="https://wa.me/919995064344" target="_blank" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>+91 9995064344</a>
-                                </div>
+                        {/* Left Column: Narrative & Info */}
+                        <motion.div variants={revealList} initial="hidden" animate="visible">
+                            <motion.div variants={fadeInUp}>
+                                <h4 style={{ color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.9rem', marginBottom: '1rem' }}>Get in Touch</h4>
+                                <h1 style={{ marginBottom: '2rem', lineHeight: '1.2' }}>Let's Create a <span style={{ color: 'var(--color-gold)', fontStyle: 'italic' }}>Masterpiece</span> Together.</h1>
+                                <p style={{ color: 'var(--color-gray)', fontSize: '1.1rem', marginBottom: '3rem', maxWidth: '500px' }}>
+                                    Have a question about a frame or a special milestone coming up? Reach out and our designers will help you create the perfect gift.
+                                </p>
                             </motion.div>
 
-                            <motion.div
-                                className="contact-method"
-                                whileHover="animate"
-                                style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}
-                            >
+                            <motion.div variants={fadeInUp} className="flex flex-col gap-lg">
                                 <motion.div
-                                    variants={iconBounce}
-                                    style={{
-                                        width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'white',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-sm)',
-                                        color: 'var(--color-gold)'
-                                    }}
+                                    className="contact-method"
+                                    whileHover="animate"
+                                    style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}
                                 >
-                                    <Instagram size={24} />
-                                </motion.div>
-                                <div>
-                                    <a href="https://instagram.com/framez__labs" target="_blank" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>@framez__labs</a>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                className="contact-method"
-                                whileHover="animate"
-                                style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}
-                            >
-                                <motion.div
-                                    variants={iconBounce}
-                                    style={{
-                                        width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'white',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-sm)',
-                                        color: 'var(--color-gold)'
-                                    }}
-                                >
-                                    <Mail size={24} />
-                                </motion.div>
-                                <div>
-                                    <h5 style={{ margin: 0, fontWeight: 700 }}>Email Us</h5>
-                                    <div style={{ display: 'flex', flexDirection: 'column', fontSize: '0.95rem' }}>
-                                        <a href="mailto:enquiry@framezlabs.store" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>enquiry@framezlabs.store</a>
-                                        <a href="mailto:support@framezlabs.store" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>support@framezlabs.store</a>
+                                    <motion.div
+                                        variants={iconBounce}
+                                        style={{
+                                            width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'white',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-sm)',
+                                            color: 'var(--color-gold)'
+                                        }}
+                                    >
+                                        <Phone size={24} />
+                                    </motion.div>
+                                    <div>
+                                        <h5 style={{ margin: 0, fontWeight: 700 }}>WhatsApp / Call</h5>
+                                        <a href="https://wa.me/919995064344" target="_blank" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>+91 9995064344</a>
                                     </div>
-                                </div>
-                            </motion.div>
-
-                            <motion.div
-                                className="contact-method"
-                                whileHover="animate"
-                                style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}
-                            >
-                                <motion.div
-                                    variants={iconBounce}
-                                    style={{
-                                        width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'white',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-sm)',
-                                        color: 'var(--color-gold)'
-                                    }}
-                                >
-                                    <MapPin size={24} />
                                 </motion.div>
-                                <div>
-                                    <h5 style={{ margin: 0, fontWeight: 700 }}>Our Studio</h5>
-                                    <p style={{ margin: 0, color: 'var(--color-gray)' }}>Shipping Pan-India | Kollam, Kerala</p>
+
+                                <motion.div
+                                    className="contact-method"
+                                    whileHover="animate"
+                                    style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}
+                                >
+                                    <motion.div
+                                        variants={iconBounce}
+                                        style={{
+                                            width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'white',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-sm)',
+                                            color: 'var(--color-gold)'
+                                        }}
+                                    >
+                                        <Instagram size={24} />
+                                    </motion.div>
+                                    <div>
+                                        <a href="https://instagram.com/framez__labs" target="_blank" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>@framez__labs</a>
+                                    </div>
+                                </motion.div>
+
+                                <motion.div
+                                    className="contact-method"
+                                    whileHover="animate"
+                                    style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}
+                                >
+                                    <motion.div
+                                        variants={iconBounce}
+                                        style={{
+                                            width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'white',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-sm)',
+                                            color: 'var(--color-gold)'
+                                        }}
+                                    >
+                                        <Mail size={24} />
+                                    </motion.div>
+                                    <div>
+                                        <h5 style={{ margin: 0, fontWeight: 700 }}>Email Us</h5>
+                                        <div style={{ display: 'flex', flexDirection: 'column', fontSize: '0.95rem' }}>
+                                            <a href="mailto:enquiry@framezlabs.store" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>enquiry@framezlabs.store</a>
+                                            <a href="mailto:support@framezlabs.store" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>support@framezlabs.store</a>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
+                                <motion.div
+                                    className="contact-method"
+                                    whileHover="animate"
+                                    style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}
+                                >
+                                    <motion.div
+                                        variants={iconBounce}
+                                        style={{
+                                            width: '56px', height: '56px', borderRadius: '16px', backgroundColor: 'white',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow-sm)',
+                                            color: 'var(--color-gold)'
+                                        }}
+                                    >
+                                        <MapPin size={24} />
+                                    </motion.div>
+                                    <div>
+                                        <h5 style={{ margin: 0, fontWeight: 700 }}>Our Studio</h5>
+                                        <p style={{ margin: 0, color: 'var(--color-gray)' }}>Shipping Pan-India | Kollam, Kerala</p>
+                                    </div>
+                                </motion.div>
+                            </motion.div>
+
+                            <motion.div variants={fadeInUp} style={{ marginTop: '4rem', padding: '2rem', backgroundColor: 'rgba(224, 122, 95, 0.05)', borderRadius: 'var(--radius-lg)', border: '1px dashed var(--color-gold)' }}>
+                                <div className="flex items-center gap-sm" style={{ color: 'var(--color-gold)', marginBottom: '0.5rem' }}>
+                                    <Sparkles size={18} />
+                                    <span style={{ fontWeight: 700, fontSize: '0.9rem', textTransform: 'uppercase' }}>Expert Consultation</span>
                                 </div>
+                                <p style={{ fontStyle: 'italic', margin: 0, fontSize: '0.9rem' }}>
+                                    "Every frame is a story. Our team is dedicated to making yours timeless."
+                                </p>
                             </motion.div>
                         </motion.div>
 
-                        <motion.div variants={fadeInUp} style={{ marginTop: '4rem', padding: '2rem', backgroundColor: 'rgba(224, 122, 95, 0.05)', borderRadius: 'var(--radius-lg)', border: '1px dashed var(--color-gold)' }}>
-                            <div className="flex items-center gap-sm" style={{ color: 'var(--color-gold)', marginBottom: '0.5rem' }}>
-                                <Sparkles size={18} />
-                                <span style={{ fontWeight: 700, fontSize: '0.9rem', textTransform: 'uppercase' }}>Expert Consultation</span>
-                            </div>
-                            <p style={{ fontStyle: 'italic', margin: 0, fontSize: '0.9rem' }}>
-                                "Every frame is a story. Our team is dedicated to making yours timeless."
-                            </p>
+                        {/* Right Column: Enquiry Form */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            style={{
+                                backgroundColor: 'white', padding: '3.5rem', borderRadius: 'var(--radius-xl)',
+                                boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.02)'
+                            }}
+                        >
+                            <h3 style={{ marginBottom: '2.5rem' }}>Send an Enquiry</h3>
+                            <EnquiryFormLogic />
                         </motion.div>
-                    </motion.div>
 
-                    {/* Right Column: Enquiry Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                        style={{
-                            backgroundColor: 'white', padding: '3.5rem', borderRadius: 'var(--radius-xl)',
-                            boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.02)'
-                        }}
-                    >
-                        <h3 style={{ marginBottom: '2.5rem' }}>Send an Enquiry</h3>
-                        <EnquiryFormLogic />
-                    </motion.div>
-
+                    </div>
                 </div>
-            </div>
 
-            {/* Subtle aesthetic backgrounds */}
-            <div style={{ position: 'fixed', top: '10%', right: '5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(224, 122, 95, 0.05) 0%, transparent 70%)', zIndex: -1, pointerEvents: 'none' }} />
-            <div style={{ position: 'fixed', bottom: '10%', left: '5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(61, 64, 91, 0.03) 0%, transparent 70%)', zIndex: -1, pointerEvents: 'none' }} />
-        </motion.div>
+                {/* Subtle aesthetic backgrounds */}
+                <div style={{ position: 'fixed', top: '10%', right: '5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(224, 122, 95, 0.05) 0%, transparent 70%)', zIndex: -1, pointerEvents: 'none' }} />
+                <div style={{ position: 'fixed', bottom: '10%', left: '5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(61, 64, 91, 0.03) 0%, transparent 70%)', zIndex: -1, pointerEvents: 'none' }} />
+            </motion.div>
+        </>
     );
 };
 
