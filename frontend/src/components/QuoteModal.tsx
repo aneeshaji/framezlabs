@@ -13,9 +13,7 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
-        email: '',
-        category: '',
-        requirements: ''
+        category: ''
     });
 
     const categories = [
@@ -35,7 +33,7 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
         await new Promise(resolve => setTimeout(resolve, 1500));
 
         // Send via WhatsApp
-        const message = `📋 Free Quote Request\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email || 'Not provided'}\nCategory: ${formData.category}\nRequirements: ${formData.requirements || 'None'}`;
+        const message = `📋 Free Quote Request\n\nName: ${formData.name}\nPhone: ${formData.phone}\nCategory: ${formData.category}`;
         const whatsappUrl = `https://wa.me/919995064344?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
 
@@ -48,9 +46,7 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             setFormData({
                 name: '',
                 phone: '',
-                email: '',
-                category: '',
-                requirements: ''
+                category: ''
             });
         }, 3000);
     };
@@ -185,27 +181,7 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
                                         />
                                     </div>
 
-                                    <div>
-                                        <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600, color: '#2D3446' }}>
-                                            Email (Optional)
-                                        </label>
-                                        <input
-                                            type="email"
-                                            value={formData.email}
-                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            placeholder="your@email.com"
-                                            style={{
-                                                width: '100%',
-                                                padding: '0.875rem',
-                                                borderRadius: '10px',
-                                                border: '2px solid #e5e7eb',
-                                                fontSize: '1rem',
-                                                fontFamily: 'inherit'
-                                            }}
-                                            onFocus={(e) => e.target.style.borderColor = '#E07A5F'}
-                                            onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
-                                        />
-                                    </div>
+
 
                                     <div>
                                         <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600, color: '#2D3446' }}>
@@ -234,28 +210,7 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
 
 
 
-                                    <div>
-                                        <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 600, color: '#2D3446' }}>
-                                            Special Requirements (Optional)
-                                        </label>
-                                        <textarea
-                                            value={formData.requirements}
-                                            onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
-                                            placeholder="Tell us about your customization needs..."
-                                            rows={3}
-                                            style={{
-                                                width: '100%',
-                                                padding: '0.875rem',
-                                                borderRadius: '10px',
-                                                border: '2px solid #e5e7eb',
-                                                fontSize: '1rem',
-                                                fontFamily: 'inherit',
-                                                resize: 'vertical'
-                                            }}
-                                            onFocus={(e) => e.target.style.borderColor = '#E07A5F'}
-                                            onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
-                                        />
-                                    </div>
+
 
                                     <button
                                         type="submit"
