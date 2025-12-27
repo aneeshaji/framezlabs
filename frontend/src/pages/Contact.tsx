@@ -74,7 +74,8 @@ export const Contact = () => {
                                         <Instagram size={24} />
                                     </motion.div>
                                     <div>
-                                        <a href="https://instagram.com/framez__labs" target="_blank" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>@framez__labs</a>
+                                        <h5 style={{ margin: 0, fontWeight: 700 }}>Instagram</h5>
+                                        <a href="https://www.instagram.com/framez__labs/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gray)', textDecoration: 'none' }}>@framez__labs</a>
                                     </div>
                                 </motion.div>
 

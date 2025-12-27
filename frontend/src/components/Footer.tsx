@@ -32,7 +32,7 @@ export const Footer = () => {
                         <Newsletter />
                         <div className="social-links" style={{ display: 'flex', gap: '1.2rem', marginTop: '2rem' }}>
                             {[
-                                { icon: <Instagram size={20} />, url: "https://instagram.com/framez__labs" },
+                                { icon: <Instagram size={20} />, url: "https://www.instagram.com/framez__labs/" },
                                 { icon: <Facebook size={20} />, url: "https://www.facebook.com/share/1Bxpottkrx/" },
                                 { icon: <Phone size={20} />, url: "https://wa.me/919995064344" }
                             ].map((social, idx) => (
@@ -97,7 +97,7 @@ export const Footer = () => {
                                 <div style={{ color: 'var(--color-gold)', backgroundColor: 'rgba(224, 122, 95, 0.1)', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
                                     <Instagram size={16} />
                                 </div>
-                                <span style={{ color: '#aaa', fontSize: '0.95rem' }}>@framez__labs</span>
+                                <a href="https://www.instagram.com/framez__labs/" target="_blank" rel="noopener noreferrer" style={{ color: '#aaa', fontSize: '0.95rem' }} className="hover-gold">@framez__labs</a>
                             </li>
                             <li className="flex items-center" style={{ gap: '0.75rem' }}>
                                 <div style={{ color: 'var(--color-gold)', backgroundColor: 'rgba(224, 122, 95, 0.1)', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px' }}>
