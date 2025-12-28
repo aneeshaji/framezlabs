@@ -10,7 +10,7 @@ export const About = () => {
             <SEO
                 title="About FramezLabs | Premium Custom Photo Frames & Gifts"
                 description="Discover the FramezLabs story. We create premium customized frames, mosaic art, and curated gift hampers that turn your precious moments into lasting legacy. Handcrafted with love in India."
-                keywords="about framezlabs, custom frame makers, handcrafted frames India, personalized gift company, photo frame boutique, premium frames"
+                keywords="about framezlabs, custom frame makers, handcrafted frames India, personalized gift company, photo frame boutique, premium frames, Personalized Love Story Photo Frame, Romantic Couple Photo Frame, Personalized Baby Birth Detail Frame, Trip To Life Collage Frame, Brother Sister Photo Frame, Memories Galore Dad Frame, Elegant Wooden Personalized Photo Frame, Heartfelt Memories Frame, LoveFold Personalized Picture Frame, Personalised Keepsake Frame, Professional Photo Prints"
                 breadcrumbs={[
                     { name: 'Home', url: '/' },
                     { name: 'About', url: '/about' }

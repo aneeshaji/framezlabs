@@ -9,7 +9,7 @@ export const Contact = () => {
             <SEO
                 title="Contact Us | FramezLabs Customer Support"
                 description="Get in touch with FramezLabs for custom photo frames and personalized gifts. WhatsApp, call, or email us for expert consultation. Pan-India shipping available."
-                keywords="contact framezlabs, custom frames enquiry, photo frame order, personalized gifts contact, framezlabs support, framezlabs kollam"
+                keywords="contact framezlabs, custom frames enquiry, photo frame order, personalized gifts contact, framezlabs support, framezlabs kollam, Personalized Love Story Photo Frame, Romantic Couple Photo Frame, Personalized Baby Birth Detail Frame, Trip To Life Collage Frame, Brother Sister Photo Frame, Memories Galore Dad Frame, Elegant Wooden Personalized Photo Frame, Heartfelt Memories Frame, LoveFold Personalized Picture Frame, Personalised Keepsake Frame, Professional Photo Prints"
                 breadcrumbs={[
                     { name: 'Home', url: '/' },
                     { name: 'Contact', url: '/contact' }

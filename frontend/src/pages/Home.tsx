@@ -14,7 +14,7 @@ export const Home = () => {
             <SEO
                 title="Custom Photo Frames & Personalized Gifts | FramezLabs India"
                 description="Create lasting memories with premium custom photo frames, gift hampers & photo books. Handcrafted with love, delivered pan-India. Perfect for birthdays, anniversaries & special occasions."
-                keywords="custom photo frames India, personalized gifts, anniversary frames, birthday photo frames, baby milestone frames, collage frames, mosaic frames, gift hampers, photo books, couple frames, handcrafted frames, premium frames online"
+                keywords="custom photo frames India, personalized gifts, anniversary frames, birthday photo frames, baby milestone frames, collage frames, mosaic frames, gift hampers, photo books, couple frames, handcrafted frames, premium frames online, Personalized Love Story Photo Frame, Romantic Couple Photo Frame, Personalized Baby Birth Detail Frame, Trip To Life Collage Frame, Brother Sister Photo Frame, Memories Galore Dad Frame, Elegant Wooden Personalized Photo Frame, Heartfelt Memories Frame, LoveFold Personalized Picture Frame, Personalised Keepsake Frame, Professional Photo Prints"
             />
             <motion.div
                 className="home-page"
@@ -153,13 +153,13 @@ export const Home = () => {
                     borderBottom: '1px solid rgba(0,0,0,0.03)'
                 }}>
                     <div className="container">
-                        <div className="flex justify-center items-center flex-wrap" style={{ gap: '4rem' }}>
+                        <div className="flex justify-center items-center flex-wrap" style={{ gap: 'clamp(1rem, 5vw, 4rem)' }}>
                             {[
                                 { icon: <ShieldCheck size={24} />, title: "100% Quality Guaranteed", desc: "Rigorous quality checks for every frame" },
                                 { icon: <Truck size={24} />, title: "Safe Pan-India Shipping", desc: "Premium packaging for zero-damage delivery" },
                                 { icon: <Sparkles size={24} />, title: "Handcrafted with Love", desc: "Expert craftsmanship in every detail" }
                             ].map((trust, i) => (
-                                <div key={i} className="flex items-start gap-md" style={{ minWidth: '250px' }}>
+                                <div key={i} className="flex items-start gap-md" style={{ flex: '1 1 280px', maxWidth: '350px' }}>
                                     <motion.div
                                         variants={iconBounce}
                                         whileInView="animate"

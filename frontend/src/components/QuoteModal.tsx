@@ -75,20 +75,20 @@ export const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
 
                     {/* Modal */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
+                        initial={{ opacity: 0, scale: 0.9, x: '-50%', y: '-40%' }}
+                        animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
+                        exit={{ opacity: 0, scale: 0.9, x: '-50%', y: '-40%' }}
                         style={{
                             position: 'fixed',
-                            inset: 0,
-                            margin: 'auto',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%, -50%)',
                             backgroundColor: 'white',
                             borderRadius: '20px',
-                            padding: '2.5rem',
-                            width: '90%',
-                            maxWidth: '500px',
+                            padding: 'clamp(1.5rem, 5vw, 2.5rem)',
+                            width: 'min(92%, 500px)',
                             height: 'fit-content',
-                            maxHeight: '90vh',
+                            maxHeight: '85vh',
                             overflowY: 'auto',
                             zIndex: 1001,
                             boxShadow: '0 25px 50px rgba(0,0,0,0.3)',

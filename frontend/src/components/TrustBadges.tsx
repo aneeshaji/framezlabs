@@ -51,8 +51,8 @@ export const TrustBadges = () => {
             <div className="container">
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-                    gap: '1.5rem',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+                    gap: '1rem',
                     alignItems: 'center'
                 }}>
                     {badges.map((badge, index) => (

@@ -8,6 +8,7 @@ import woodenFrame from '../assets/products/personalized-photo-frame-custom.jpg'
 import heartfeltFrame from '../assets/products/heartfelt-memories-frame.webp';
 import loveFoldFrame from '../assets/products/lovefold-personalised-picture-frame.webp';
 import keepsakeFrame from '../assets/products/personalised-keepsake-frame.webp';
+import photoPrints from '../assets/products/photo-prints-large.jpg';
 
 export interface Product {
   id: string;
@@ -30,10 +31,19 @@ export const CATEGORIES = [
   "Gift Hampers",
   "Personalized Mugs",
   "Custom Photo Books",
-  "A3/A4 Frames"
+  "A3/A4 Frames",
+  "Professional Photo Prints"
 ];
 
 export const FEATURED_PRODUCTS: Product[] = [
+  {
+    id: '27',
+    name: "Professional Photo Prints",
+    category: "Professional Photo Prints",
+    image: photoPrints,
+    description: "High-quality professional photo prints with vibrant colors and premium finish. Perfect for preserving your best moments in large format.",
+    tag: 'New'
+  },
   {
     id: '26',
     name: "Personalised Keepsake Frame",
