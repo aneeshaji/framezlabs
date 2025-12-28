@@ -535,25 +535,84 @@ export const Home = () => {
                 <FAQ />
 
                 {/* Enquiry Section */}
-                <section id="enquiry" className="section-padding" style={{ backgroundColor: 'var(--color-off-white)' }}>
+                <section id="enquiry" className="section-padding custom-concept-section" style={{ backgroundColor: 'var(--color-off-white)' }}>
                     <div className="container">
-                        <div className="grid grid-cols-1" style={{ gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
-                            <div>
-                                <h2 className="text-teal" style={{ fontFamily: 'var(--font-heading)' }}>Have a Custom Concept?</h2>
-                                <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
+                        <div className="custom-concept-grid">
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                viewport={{ once: true }}
+                            >
+                                <h2 className="text-teal" style={{ fontFamily: 'var(--font-heading)', marginBottom: '1.5rem' }}>Have a Custom Concept?</h2>
+                                <p style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: 'var(--color-gray)', lineHeight: 1.6 }}>
                                     Whether it's a corporate gift, a bulk order, or a unique idea you have in mind – let us know! We turn your concepts into reality.
                                 </p>
-                                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                                    <li className="flex items-center gap-sm"><CheckCircle className="text-gold" /> 100% Customized Designs</li>
-                                    <li className="flex items-center gap-sm"><CheckCircle className="text-gold" /> Digital Proof before Printing</li>
-                                    <li className="flex items-center gap-sm"><CheckCircle className="text-gold" /> Pan-India Shipping</li>
+                                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1.2rem', padding: 0 }}>
+                                    {[
+                                        "100% Customized Designs",
+                                        "Digital Proof before Printing",
+                                        "Safe Pan-India Shipping"
+                                    ].map((text, i) => (
+                                        <li key={i} className="flex items-center gap-sm" style={{ fontWeight: 600, color: 'var(--color-teal)' }}>
+                                            <div style={{ backgroundColor: 'rgba(224, 122, 95, 0.1)', padding: '0.3rem', borderRadius: '50%', display: 'flex' }}>
+                                                <CheckCircle size={18} className="text-gold" />
+                                            </div>
+                                            {text}
+                                        </li>
+                                    ))}
                                 </ul>
-                            </div>
-                            <div>
-                                <EnquiryForm />
-                            </div>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.6 }}
+                                viewport={{ once: true }}
+                            >
+                                <div style={{
+                                    backgroundColor: 'white',
+                                    padding: '2.5rem',
+                                    borderRadius: '30px',
+                                    boxShadow: '0 20px 50px rgba(0,0,0,0.08)',
+                                    border: '1px solid rgba(0,0,0,0.02)'
+                                }}>
+                                    <EnquiryForm />
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
+                    <style>{`
+                        .custom-concept-grid {
+                            display: grid;
+                            grid-template-columns: 1fr 1.2fr;
+                            gap: 6rem;
+                            align-items: center;
+                        }
+
+                        @media (max-width: 1024px) {
+                            .custom-concept-grid {
+                                gap: 3rem;
+                                grid-template-columns: 1fr;
+                            }
+                            .custom-concept-section {
+                                text-align: center;
+                            }
+                            .custom-concept-section ul {
+                                align-items: center;
+                                margin-bottom: 3rem;
+                            }
+                        }
+
+                        @media (max-width: 768px) {
+                            .custom-concept-grid {
+                                gap: 2rem;
+                            }
+                            .custom-concept-section {
+                                padding-top: 4rem;
+                                padding-bottom: 4rem;
+                            }
+                        }
+                    `}</style>
                 </section>
 
                 {/* CTA Strip */}

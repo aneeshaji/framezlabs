@@ -44,17 +44,12 @@ export const TrustBadges = () => {
     return (
         <div style={{
             backgroundColor: 'var(--color-off-white)',
-            padding: '2.5rem 0',
-            borderTop: '1px solid rgba(0,0,0,0.05)',
-            borderBottom: '1px solid rgba(0,0,0,0.05)'
+            padding: '4rem 0',
+            borderTop: '1px solid rgba(0,0,0,0.03)',
+            borderBottom: '1px solid rgba(0,0,0,0.03)'
         }}>
             <div className="container">
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-                    gap: '1rem',
-                    alignItems: 'center'
-                }}>
+                <div className="trust-badges-grid">
                     {badges.map((badge, index) => (
                         <motion.div
                             key={index}
@@ -62,46 +57,51 @@ export const TrustBadges = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            whileHover={{ y: -5 }}
+                            whileHover={{ y: -8, boxShadow: '0 12px 30px rgba(0,0,0,0.08)' }}
                             style={{
                                 display: 'flex',
                                 flexDirection: 'column',
                                 alignItems: 'center',
                                 textAlign: 'center',
-                                padding: '1rem',
+                                padding: '2rem 1.5rem',
                                 backgroundColor: 'white',
-                                borderRadius: '12px',
-                                boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                                transition: 'all 0.3s ease'
+                                borderRadius: '20px',
+                                boxShadow: '0 4px 15px rgba(0,0,0,0.03)',
+                                border: '1px solid rgba(0,0,0,0.02)',
+                                transition: 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)',
+                                cursor: 'default'
                             }}
                         >
                             <div style={{
-                                width: '56px',
-                                height: '56px',
+                                width: '64px',
+                                height: '64px',
                                 borderRadius: '50%',
-                                backgroundColor: `${badge.color}15`,
+                                backgroundColor: `${badge.color}10`, // Softer background
                                 color: badge.color,
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                marginBottom: '0.75rem'
-                            }}>
+                                marginBottom: '1.2rem',
+                                transition: 'transform 0.3s ease'
+                            }} className="badge-icon-wrapper">
                                 {badge.icon}
                             </div>
                             <h4 style={{
                                 margin: 0,
-                                fontSize: '1.1rem',
-                                fontWeight: 700,
-                                color: '#2D3446',
-                                marginBottom: '0.25rem'
+                                fontSize: '1.2rem',
+                                fontWeight: 800,
+                                color: 'var(--color-dark)',
+                                marginBottom: '0.4rem',
+                                letterSpacing: '-0.02em'
                             }}>
                                 {badge.title}
                             </h4>
                             <p style={{
                                 margin: 0,
                                 fontSize: '0.85rem',
-                                color: '#666',
-                                lineHeight: 1.3
+                                color: 'var(--color-gray)',
+                                fontWeight: 500,
+                                lineHeight: 1.4
                             }}>
                                 {badge.subtitle}
                             </p>
@@ -109,6 +109,41 @@ export const TrustBadges = () => {
                     ))}
                 </div>
             </div>
+            <style>{`
+                .trust-badges-grid {
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                    gap: 1.5rem;
+                }
+
+                @media (max-width: 1200px) {
+                    .trust-badges-grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .trust-badges-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 1rem;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .trust-badges-grid {
+                        grid-template-columns: 1fr;
+                        padding: 0 1rem;
+                    }
+                }
+
+                .badge-icon-wrapper svg {
+                    transition: transform 0.3s ease;
+                }
+
+                motion.div:hover .badge-icon-wrapper svg {
+                    transform: scale(1.1);
+                }
+            `}</style>
         </div>
     );
 };
