@@ -9,6 +9,9 @@ import heartfeltFrame from '../assets/products/heartfelt-memories-frame.webp';
 import loveFoldFrame from '../assets/products/lovefold-personalised-picture-frame.webp';
 import keepsakeFrame from '../assets/products/personalised-keepsake-frame.webp';
 import photoPrints from '../assets/products/photo-prints-large.jpg';
+import hamperAdorable from '../assets/products/SGTI071.webp';
+import hamperBirthday from '../assets/products/special-gift-hamper-for-birthday-with-photo-frame-mug-chocolates.webp';
+import photoFrameChoco from '../assets/products/personalised-photoframe-with-chocolates-bars.jpg';
 
 export interface Product {
   id: string;
@@ -36,6 +39,30 @@ export const CATEGORIES = [
 ];
 
 export const FEATURED_PRODUCTS: Product[] = [
+  {
+    id: '30',
+    name: "Personalised Photoframe with Chocolates Bars",
+    category: "Gift Hampers",
+    image: photoFrameChoco,
+    description: "A beautiful personalised photo frame accompanied by delicious chocolate bars. A delightful gift for any occasion.",
+    tag: 'New'
+  },
+  {
+    id: '29',
+    name: "Special Gift Hamper For Birthday With Photo Frame Mug N Chocolates",
+    category: "Gift Hampers",
+    image: hamperBirthday,
+    description: "A specially curated birthday gift hamper featuring a custom photo frame, personalized mug, and delicious chocolates. Perfect for making birthdays extra memorable.",
+    tag: 'Popular'
+  },
+  {
+    id: '28',
+    name: "Adorable Hamper of Mug, Frame, Chocolates N Perfume",
+    category: "Gift Hampers",
+    image: hamperAdorable,
+    description: "An adorable gift hamper featuring a personalized mug, photo frame, premium chocolates, and a special perfume. A complete gift set for any special occasion.",
+    tag: 'New'
+  },
   {
     id: '27',
     name: "Professional Photo Prints",

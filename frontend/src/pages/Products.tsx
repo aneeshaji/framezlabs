@@ -30,7 +30,7 @@ export const Products = () => {
         : `Explore our ${activeCategory} collection. Premium quality custom frames handcrafted with love.`;
 
     const seoKeywords = activeCategory === "All"
-        ? "custom photo frames, personalized gifts, anniversary frames, birthday frames, collage frames, mosaic frames, baby milestone frames, gift hampers, photo books, personalized mugs, A3/A4 frames, Personalized Love Story Photo Frame, Romantic Couple Photo Frame, Personalized Baby Birth Detail Frame, Trip To Life Collage Frame, Brother Sister Photo Frame, Memories Galore Dad Frame, Elegant Wooden Personalized Photo Frame, Heartfelt Memories Frame, LoveFold Personalized Picture Frame, Personalised Keepsake Frame, Professional Photo Prints"
+        ? "custom photo frames, personalized gifts, anniversary frames, birthday frames, collage frames, mosaic frames, baby milestone frames, gift hampers, photo books, personalized mugs, A3/A4 frames, Personalized Love Story Photo Frame, Romantic Couple Photo Frame, Personalized Baby Birth Detail Frame, Trip To Life Collage Frame, Brother Sister Photo Frame, Memories Galore Dad Frame, Elegant Wooden Personalized Photo Frame, Heartfelt Memories Frame, LoveFold Personalized Picture Frame, Personalised Keepsake Frame, Professional Photo Prints, Adorable Hamper of Mug, Frame, Chocolates N Perfume, Special Gift Hamper For Birthday With Photo Frame Mug N Chocolates, Personalised Photoframe with Chocolates Bars"
         : `${activeCategory.toLowerCase()}, custom frames, personalized gifts, photo frames India, ${activeCategory.toLowerCase()} online`;
 
     return (

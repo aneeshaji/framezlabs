@@ -38,6 +38,24 @@
   </url>
   <!-- New Products -->
   <url>
+    <loc>https://framezlabs.store/products/30</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://framezlabs.store/products/29</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://framezlabs.store/products/28</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://framezlabs.store/products/27</loc>
     <lastmod>2025-12-28</lastmod>
     <changefreq>monthly</changefreq>

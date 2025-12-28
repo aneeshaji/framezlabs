@@ -9,7 +9,7 @@ export const Gallery = () => {
             <SEO
                 title="Photo Gallery | Custom Frame Designs by FramezLabs"
                 description="Explore our gallery of custom photo frames, mosaic art, and personalized gifts. See real customer stories and design inspirations from FramezLabs."
-                keywords="framezlabs gallery, custom frame designs, photo frame ideas, mosaic art gallery, personalized gift examples, Personalized Love Story Photo Frame, Romantic Couple Photo Frame, Personalized Baby Birth Detail Frame, Trip To Life Collage Frame, Brother Sister Photo Frame, Memories Galore Dad Frame, Elegant Wooden Personalized Photo Frame, Heartfelt Memories Frame, LoveFold Personalized Picture Frame, Personalised Keepsake Frame, Professional Photo Prints"
+                keywords="framezlabs gallery, custom frame designs, photo frame ideas, mosaic art gallery, personalized gift examples, Personalized Love Story Photo Frame, Romantic Couple Photo Frame, Personalized Baby Birth Detail Frame, Trip To Life Collage Frame, Brother Sister Photo Frame, Memories Galore Dad Frame, Elegant Wooden Personalized Photo Frame, Heartfelt Memories Frame, LoveFold Personalized Picture Frame, Personalised Keepsake Frame, Professional Photo Prints, Adorable Hamper of Mug, Frame, Chocolates N Perfume, Special Gift Hamper For Birthday With Photo Frame Mug N Chocolates, Personalised Photoframe with Chocolates Bars"
                 breadcrumbs={[
                     { name: 'Home', url: '/' },
                     { name: 'Gallery', url: '/gallery' }
