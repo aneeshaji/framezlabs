@@ -252,3 +252,20 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
         display: none !important;
     }
 }
+
+/* Navbar Responsiveness */
+.mobile-nav-toggle {
+    display: none;
+}
+.desktop-menu-container {
+    display: flex;
+}
+
+@media (max-width: 1024px) {
+    .desktop-menu-container {
+        display: none !important;
+    }
+    .mobile-nav-toggle {
+        display: block !important;
+    }
+}

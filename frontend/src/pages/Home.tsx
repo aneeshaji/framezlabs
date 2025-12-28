@@ -61,7 +61,7 @@ export const Home = () => {
                     }} />
 
                     <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                        <div className="grid grid-cols-1" style={{ gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+                        <div className="grid grid-cols-1 grid-cols-2" style={{ gap: '4rem', alignItems: 'center' }}>
 
                             {/* Text Content */}
                             <motion.div

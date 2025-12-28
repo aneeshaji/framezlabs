@@ -69,7 +69,7 @@ export const Navbar = () => {
                 </motion.div>
 
                 {/* Desktop Links */}
-                <div className="desktop-menu" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <div className="desktop-menu-container" style={{ gap: '0.5rem', alignItems: 'center' }}>
                     {navLinks.map((link) => (
                         <NavLink
                             key={link.path}
@@ -143,20 +143,14 @@ export const Navbar = () => {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="mobile-toggle"
+                    className="mobile-nav-toggle"
                     onClick={() => setIsOpen(!isOpen)}
-                    style={{ display: 'none', background: 'none', border: 'none', color: 'var(--color-dark)', cursor: 'pointer' }}
+                    style={{ background: 'none', border: 'none', color: 'var(--color-dark)', cursor: 'pointer' }}
+                    aria-label="Toggle Menu"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
-
-            <style>{`
-                @media (max-width: 1024px) {
-                    .desktop-menu { display: none !important; }
-                    .mobile-toggle { display: block !important; }
-                }
-            `}</style>
 
             {/* Mobile Menu Dropdown */}
             <AnimatePresence>
