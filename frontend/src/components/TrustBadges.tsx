@@ -5,7 +5,7 @@ export const TrustBadges = () => {
     const badges = [
         {
             icon: <Users size={24} />,
-            title: '1000+',
+            title: '500+',
             subtitle: 'Happy Customers',
             color: '#E07A5F'
         },

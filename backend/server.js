@@ -55,7 +55,6 @@ app.post('/api/subscribe', async (req, res) => {
 });
 
 // Enquiry Endpoint
-// Enquiry Endpoint
 app.post('/api/enquiry', async (req, res) => {
     const { name, phone, message, category } = req.body;
 

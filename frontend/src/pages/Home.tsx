@@ -1,14 +1,24 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, Heart, ShieldCheck, Truck, Gift, CheckCircle, MessageCircle, Sparkles, Baby, Cake, Users, Frame, Image as ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { EnquiryForm } from '../components/EnquiryForm';
+import { QuoteModal } from '../components/QuoteModal';
 import { FAQ } from '../components/FAQ';
 import { NewYearBanner } from '../components/NewYearBanner';
 import { SEO } from '../components/SEO';
 import { TrustBadges } from '../components/TrustBadges';
+import { FEATURED_PRODUCTS } from '../data/products';
 import { pageTransition, fadeInUp, staggerContainer, scaleIn, floating, iconBounce, iconJiggle } from "../utils/animations";
 
 export const Home = () => {
+    const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const openEnquiry = (category: string) => {
+        setSelectedCategory(category);
+        setIsQuoteOpen(true);
+    };
     return (
         <>
             <SEO
@@ -132,7 +142,7 @@ export const Home = () => {
                                         </div>
                                         <div>
                                             <h5 style={{ margin: 0, fontSize: '0.9rem' }}>Top Rated</h5>
-                                            <span style={{ fontSize: '0.8rem', color: '#666' }}>Trusted by 1000+ Customers</span>
+                                            <span style={{ fontSize: '0.8rem', color: '#666' }}>Trusted by 500+ Customers</span>
                                         </div>
                                     </motion.div>
                                 </motion.div>
@@ -186,6 +196,155 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
+                {/* Best Sellers Section */}
+                <section className="section-padding" style={{ backgroundColor: 'white' }}>
+                    <div className="container">
+                        <div className="flex justify-between items-end flex-wrap" style={{ marginBottom: '3rem', gap: '1rem' }}>
+                            <div>
+                                <h2 className="text-teal" style={{ fontFamily: 'var(--font-heading)', marginBottom: '0.75rem', fontSize: '2.2rem' }}>Gifts that Inspire</h2>
+                                <p style={{ color: 'var(--color-gray)', margin: 0, fontSize: '1rem' }}>Our most-loved personalized creations, just for you.</p>
+                            </div>
+                            <Link
+                                to="/products"
+                                className="group"
+                                style={{ textDecoration: 'none' }}
+                            >
+                                <motion.div
+                                    whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(255, 215, 0, 0.6)' }}
+                                    whileTap={{ scale: 0.95 }}
+                                    style={{
+                                        backgroundColor: '#FFD700',
+                                        color: '#8B0000',
+                                        padding: '0.8rem 2rem',
+                                        borderRadius: 'var(--radius-full)',
+                                        fontWeight: 800,
+                                        fontSize: '1rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.6rem',
+                                        boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+                                        position: 'relative',
+                                        overflow: 'hidden'
+                                    }}
+                                >
+                                    {/* Shine Effect */}
+                                    <div style={{
+                                        position: 'absolute',
+                                        top: 0, left: 0, width: '100%', height: '100%',
+                                        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent)',
+                                        transform: 'skewX(-20deg)',
+                                        animation: 'shimmer 3s infinite',
+                                    }} />
+
+                                    <span style={{ textTransform: 'uppercase', letterSpacing: '1px', position: 'relative', zIndex: 1 }}>View All</span>
+                                    <ArrowRight size={20} style={{ position: 'relative', zIndex: 1 }} />
+                                </motion.div>
+                            </Link>
+                        </div>
+
+                        <div className="grid" style={{
+                            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+                            gap: '2rem'
+                        }}>
+                            {FEATURED_PRODUCTS.slice(0, 4).map((product) => (
+                                <motion.div
+                                    key={product.id}
+                                    variants={fadeInUp}
+                                    whileHover={{ y: -8 }}
+                                    style={{
+                                        backgroundColor: 'var(--color-bg-main)',
+                                        borderRadius: '20px',
+                                        overflow: 'hidden',
+                                        boxShadow: 'var(--shadow-sm)',
+                                        border: '1px solid rgba(0,0,0,0.03)',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        height: '100%',
+                                        transition: 'all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)'
+                                    }}
+                                >
+                                    <div style={{ position: 'relative', paddingTop: '100%', overflow: 'hidden' }}>
+                                        <img
+                                            src={product.image}
+                                            alt={product.name}
+                                            style={{
+                                                position: 'absolute',
+                                                top: 0,
+                                                left: 0,
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'cover',
+                                                transition: 'transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)'
+                                            }}
+                                            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                                            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                                        />
+                                        {product.tag && (
+                                            <div style={{
+                                                position: 'absolute',
+                                                top: '1rem',
+                                                right: '1rem',
+                                                backgroundColor: 'var(--color-gold)',
+                                                color: 'white',
+                                                padding: '0.4rem 1rem',
+                                                borderRadius: 'var(--radius-full)',
+                                                fontSize: '0.65rem',
+                                                fontWeight: 800,
+                                                letterSpacing: '0.05em',
+                                                textTransform: 'uppercase',
+                                                boxShadow: '0 4px 12px rgba(224, 122, 95, 0.2)',
+                                                zIndex: 2
+                                            }}>
+                                                {product.tag}
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                        <span style={{
+                                            fontSize: '0.7rem',
+                                            color: 'var(--color-gold)',
+                                            fontWeight: 700,
+                                            textTransform: 'uppercase',
+                                            marginBottom: '0.5rem',
+                                            letterSpacing: '0.1em',
+                                            display: 'block'
+                                        }}>
+                                            {product.category}
+                                        </span>
+                                        <h4 style={{
+                                            fontSize: '1.05rem',
+                                            marginBottom: '1.25rem',
+                                            lineHeight: 1.4,
+                                            flex: 1,
+                                            fontWeight: 700,
+                                            color: 'var(--color-dark)',
+                                            display: '-webkit-box',
+                                            WebkitLineClamp: 2,
+                                            WebkitBoxOrient: 'vertical',
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis'
+                                        }}>{product.name}</h4>
+                                        <button
+                                            onClick={() => openEnquiry(product.category)}
+                                            className="btn btn-primary"
+                                            style={{
+                                                width: '100%',
+                                                padding: '0.8rem',
+                                                fontSize: '0.85rem',
+                                                textAlign: 'center',
+                                                borderRadius: '12px',
+                                                border: 'none',
+                                                cursor: 'pointer'
+                                            }}
+                                        >
+                                            Enquire Now
+                                        </button>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
                 {/* Trust Badges */}
                 <TrustBadges />
@@ -355,6 +514,7 @@ export const Home = () => {
                         </motion.div>
                     </div>
                 </section>
+
 
                 {/* Why Choose Us Section */}
                 <section className="section-padding" style={{ backgroundColor: 'var(--color-off-white)' }}>
@@ -612,6 +772,11 @@ export const Home = () => {
                                 padding-bottom: 4rem;
                             }
                         }
+
+                        @keyframes shimmer {
+                            0% { transform: translateX(-100%); }
+                            100% { transform: translateX(100%); }
+                        }
                     `}</style>
                 </section>
 
@@ -646,6 +811,12 @@ export const Home = () => {
                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%)', zIndex: 1 }} />
                 </section>
             </motion.div >
+
+            <QuoteModal
+                isOpen={isQuoteOpen}
+                onClose={() => setIsQuoteOpen(false)}
+                initialCategory={selectedCategory}
+            />
         </>
     );
 };
