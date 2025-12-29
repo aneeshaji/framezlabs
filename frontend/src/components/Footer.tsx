@@ -16,7 +16,7 @@ export const Footer = () => {
                 <div className="grid grid-cols-1" style={{ gap: '4rem', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
 
                     {/* Brand */}
-                    <div className="footer-col">
+                    <div className="footer-col" style={{ padding: '0.5rem 0' }}>
                         <h2 style={{
                             color: 'var(--color-gold)',
                             fontSize: '1.8rem',
@@ -66,7 +66,7 @@ export const Footer = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div className="footer-col">
+                    <div className="footer-col" style={{ padding: '0.5rem 0' }}>
                         <h4 style={{ color: 'var(--color-white)', marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '1px' }}>Navigation</h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             {['Home', 'Products', 'Gallery', 'About', 'Contact', 'FAQ'].map((link, i) => (
@@ -84,7 +84,7 @@ export const Footer = () => {
                     </div>
 
                     {/* Contact */}
-                    <div className="footer-col">
+                    <div className="footer-col" style={{ padding: '0.5rem 0' }}>
                         <h4 style={{ color: 'var(--color-white)', marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '1px' }}>Reach Out</h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             <li className="flex items-center" style={{ gap: '0.75rem' }}>
@@ -120,7 +120,7 @@ export const Footer = () => {
                     </div>
 
                     {/* Legal */}
-                    <div className="footer-col">
+                    <div className="footer-col" style={{ padding: '0.5rem 0' }}>
                         <h4 style={{ color: 'var(--color-white)', marginBottom: '1.5rem', textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '1px' }}>Policy</h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             {[

@@ -144,10 +144,19 @@ export const Navbar = () => {
                 <button
                     className="mobile-nav-toggle"
                     onClick={() => setIsOpen(!isOpen)}
-                    style={{ background: 'none', border: 'none', color: 'var(--color-dark)', cursor: 'pointer' }}
+                    style={{
+                        background: 'none',
+                        border: 'none',
+                        color: 'var(--color-dark)',
+                        cursor: 'pointer',
+                        padding: '0.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
                     aria-label="Toggle Menu"
                 >
-                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>
 

@@ -130,7 +130,10 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
   padding: 0 1.5rem;
 }
 
-.section-padding { padding: var(--spacing-lg) 0; }
+.section-padding { 
+  padding-top: var(--spacing-lg); 
+  padding-bottom: var(--spacing-lg); 
+}
 
 .text-center { text-align: center; }
 .flex { display: flex; }
