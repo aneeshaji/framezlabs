@@ -169,7 +169,7 @@ export const Home = () => {
                                 { icon: <Truck size={24} />, title: "Safe Pan-India Shipping", desc: "Premium packaging for zero-damage delivery" },
                                 { icon: <Sparkles size={24} />, title: "Handcrafted with Love", desc: "Expert craftsmanship in every detail" }
                             ].map((trust, i) => (
-                                <div key={i} className="flex items-start gap-md" style={{ flex: '1 1 280px', maxWidth: '350px' }}>
+                                <div key={i} className="flex items-start gap-md" style={{ flex: '1 1 200px', maxWidth: '350px' }}>
                                     <motion.div
                                         variants={iconBounce}
                                         whileInView="animate"

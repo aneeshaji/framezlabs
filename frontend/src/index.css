@@ -87,7 +87,7 @@ input::-webkit-inner-spin-button {
   padding: 0;
 }
 
-html, body {
+html, body, .app {
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
@@ -250,6 +250,9 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
     .hidden-mobile {
         display: none !important;
     }
+    .container {
+        padding: 0 1rem;
+    }
 }
 
 @media (min-width: 769px) {
@@ -271,6 +274,6 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
         display: none !important;
     }
     .mobile-nav-toggle {
-        display: block !important;
+        display: flex !important;
     }
 }

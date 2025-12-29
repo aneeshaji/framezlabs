@@ -68,7 +68,7 @@ export const NewYearBanner = () => {
             <div style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '2rem',
+                gap: 'clamp(0.5rem, 3vw, 2rem)',
                 zIndex: 1,
                 flexWrap: 'wrap',
                 justifyContent: 'center',

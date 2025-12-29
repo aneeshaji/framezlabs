@@ -36,7 +36,7 @@ export const Navbar = () => {
         <nav
             className={`navbar ${scrolled ? 'scrolled' : ''}`}
             style={{
-                position: 'fixed',
+                position: 'sticky',
                 top: 0,
                 left: 0,
                 right: 0,
