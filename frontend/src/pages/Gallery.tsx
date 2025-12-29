@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { pageTransition, fadeInUp, staggerContainer } from '../utils/animations';
-import { Instagram, MessageCircle, X, Maximize2, Play } from 'lucide-react';
+import { Instagram, MessageCircle, X, Maximize2, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 // Asset Imports
@@ -12,6 +12,7 @@ import customer4 from '../assets/gallery/customer-4.jpg';
 import customer5 from '../assets/gallery/customer-5.jpg';
 import customer6 from '../assets/gallery/customer-6.jpg';
 import customer7 from '../assets/gallery/customer-7.jpg';
+import customer8 from '../assets/gallery/customer-8.heic';
 import customerVideo from '../assets/gallery/customer-video.mp4';
 
 interface GalleryItem {
@@ -27,21 +28,38 @@ const GALLERY_ITEMS: GalleryItem[] = [
     { type: 'image', src: customer5, caption: "Personalized Perfection" },
     { type: 'image', src: customer6, caption: "Anniversary Love" },
     { type: 'image', src: customer7, caption: "Home Decor Elegance" },
+    { type: 'image', src: customer8, caption: "Special Gift Surprise" },
     { type: 'image', src: customer2, caption: "Customer Appreciation" },
     { type: 'image', src: customer3, caption: "Creating Memories" },
 ];
 
 export const Gallery = () => {
-    const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const selectedItem = selectedIndex !== null ? GALLERY_ITEMS[selectedIndex] : null;
 
-    // Handle ESC key to close lightbox
+    const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setSelectedIndex(null);
+        if (e.key === 'ArrowRight') handleNext();
+        if (e.key === 'ArrowLeft') handlePrev();
+    };
+
+    const handleNext = () => {
+        if (selectedIndex !== null) {
+            setSelectedIndex((selectedIndex + 1) % GALLERY_ITEMS.length);
+        }
+    };
+
+    const handlePrev = () => {
+        if (selectedIndex !== null) {
+            setSelectedIndex((selectedIndex - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length);
+        }
+    };
+
+    // Handle keys to navigate/close lightbox
     useEffect(() => {
-        const handleEsc = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') setSelectedItem(null);
-        };
-        window.addEventListener('keydown', handleEsc);
-        return () => window.removeEventListener('keydown', handleEsc);
-    }, []);
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [selectedIndex]);
 
     // Prevent scroll when lightbox is open
     useEffect(() => {
@@ -102,7 +120,7 @@ export const Gallery = () => {
                                 key={index}
                                 variants={fadeInUp}
                                 className={`gallery-item ${index % 3 === 0 ? 'large' : ''}`}
-                                onClick={() => setSelectedItem(item)}
+                                onClick={() => setSelectedIndex(index)}
                                 whileHover={{ y: -10 }}
                             >
                                 <div className="gallery-card-inner">
@@ -157,16 +175,30 @@ export const Gallery = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={() => setSelectedItem(null)}
+                        onClick={() => setSelectedIndex(null)}
                     >
                         <motion.button
                             className="lightbox-close"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            onClick={() => setSelectedItem(null)}
+                            onClick={() => setSelectedIndex(null)}
                         >
                             <X size={32} />
                         </motion.button>
+
+                        <button
+                            className="lightbox-nav prev"
+                            onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                        >
+                            <ChevronLeft size={48} />
+                        </button>
+
+                        <button
+                            className="lightbox-nav next"
+                            onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                        >
+                            <ChevronRight size={48} />
+                        </button>
 
                         <motion.div
                             className="lightbox-content"
@@ -361,6 +393,37 @@ export const Gallery = () => {
                     color: white;
                     cursor: pointer;
                     z-index: 10001;
+                }
+
+                .lightbox-nav {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: none;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    z-index: 10002;
+                    transition: all 0.3s ease;
+                    opacity: 0.6;
+                    padding: 1rem;
+                }
+
+                .lightbox-nav:hover {
+                    opacity: 1;
+                    scale: 1.1;
+                }
+
+                .lightbox-nav.prev { left: 2rem; }
+                .lightbox-nav.next { right: 2rem; }
+
+                @media (max-width: 768px) {
+                    .lightbox-nav {
+                        padding: 0.5rem;
+                    }
+                    .lightbox-nav.prev { left: 0.5rem; }
+                    .lightbox-nav.next { right: 0.5rem; }
+                    .lightbox-nav svg { width: 32px; height: 32px; }
                 }
 
                 .lightbox-content {

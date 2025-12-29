@@ -729,9 +729,8 @@ export const Home = () => {
                                 transition={{ duration: 0.6 }}
                                 viewport={{ once: true }}
                             >
-                                <div style={{
+                                <div className="enquiry-form-container" style={{
                                     backgroundColor: 'white',
-                                    padding: '2.5rem',
                                     borderRadius: '30px',
                                     boxShadow: '0 20px 50px rgba(0,0,0,0.08)',
                                     border: '1px solid rgba(0,0,0,0.02)'
@@ -747,6 +746,10 @@ export const Home = () => {
                             grid-template-columns: 1fr 1.2fr;
                             gap: 6rem;
                             align-items: center;
+                        }
+
+                        .enquiry-form-container {
+                            padding: 2.5rem;
                         }
 
                         @media (max-width: 1024px) {
@@ -771,6 +774,9 @@ export const Home = () => {
                                 padding-top: 4rem;
                                 padding-bottom: 4rem;
                             }
+                            .enquiry-form-container {
+                                padding: 1.5rem;
+                            }
                         }
 
                         @keyframes shimmer {
@@ -780,8 +786,7 @@ export const Home = () => {
                     `}</style>
                 </section>
 
-                {/* CTA Strip */}
-                <section style={{
+                <section className="cta-strip-section" style={{
                     padding: '8rem 0',
                     background: 'linear-gradient(rgba(45, 52, 70, 0.95), rgba(2, 6, 23, 1)), url("https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=1600")',
                     backgroundSize: 'cover',
@@ -798,8 +803,8 @@ export const Home = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 style={{ color: 'var(--color-gold)', marginBottom: '1.5rem', fontSize: '3rem', letterSpacing: '-1px' }}>Ready to Frame Your Memories?</h2>
-                            <p style={{ color: '#ccc', marginBottom: '3rem', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
+                            <h2 className="cta-title" style={{ color: 'var(--color-gold)', marginBottom: '1.5rem', letterSpacing: '-1px' }}>Ready to Frame Your Memories?</h2>
+                            <p className="cta-text" style={{ color: '#ccc', marginBottom: '3rem', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 3rem' }}>
                                 Every moment tells a story. Let us help you tell yours with perfection and grace.
                             </p>
                             <Link to="/products" className="btn btn-gold" style={{ padding: '1.2rem 3.5rem', borderRadius: 'var(--radius-full)' }}>
@@ -809,6 +814,23 @@ export const Home = () => {
                     </div>
                     {/* Decorative overlay */}
                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%)', zIndex: 1 }} />
+                    <style>{`
+                        .cta-title {
+                            font-size: 3rem;
+                        }
+                        @media (max-width: 768px) {
+                            .cta-strip-section {
+                                padding: 4rem 1.5rem !important;
+                            }
+                            .cta-title {
+                                font-size: 2rem !important;
+                            }
+                            .cta-text {
+                                font-size: 1rem !important;
+                                margin-bottom: 2rem !important;
+                            }
+                        }
+                    `}</style>
                 </section>
             </motion.div >
 

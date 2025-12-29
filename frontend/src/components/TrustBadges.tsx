@@ -42,7 +42,7 @@ export const TrustBadges = () => {
     ];
 
     return (
-        <div style={{
+        <div className="trust-badges-section" style={{
             backgroundColor: 'var(--color-off-white)',
             padding: '4rem 0',
             borderTop: '1px solid rgba(0,0,0,0.03)',
@@ -122,7 +122,14 @@ export const TrustBadges = () => {
                     }
                 }
 
+                .trust-badges-section {
+                    padding: 4rem 0;
+                }
+
                 @media (max-width: 768px) {
+                    .trust-badges-section {
+                        padding: 2rem 0 !important;
+                    }
                     .trust-badges-grid {
                         grid-template-columns: repeat(2, 1fr);
                         gap: 1rem;

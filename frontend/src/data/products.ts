@@ -40,11 +40,11 @@ export const CATEGORIES = [
 
 export const FEATURED_PRODUCTS: Product[] = [
   {
-    id: '30',
-    name: "Personalised Photoframe with Chocolates Bars",
-    category: "Gift Hampers",
-    image: photoFrameChoco,
-    description: "A beautiful personalised photo frame accompanied by delicious chocolate bars. A delightful gift for any occasion.",
+    id: '17',
+    name: "Personalized Love Story Photo Frame",
+    category: "Anniversary Frames",
+    image: loveStoryFrame,
+    description: "Celebrate your unique journey with this customized love story frame, perfect for anniversaries and special dates.",
     tag: 'New'
   },
   {
@@ -69,6 +69,14 @@ export const FEATURED_PRODUCTS: Product[] = [
     category: "Professional Photo Prints",
     image: photoPrints,
     description: "High-quality professional photo prints with vibrant colors and premium finish. Perfect for preserving your best moments in large format.",
+    tag: 'New'
+  },
+  {
+    id: '30',
+    name: "Personalised Photoframe with Chocolates Bars",
+    category: "Gift Hampers",
+    image: photoFrameChoco,
+    description: "A beautiful personalised photo frame accompanied by delicious chocolate bars. A delightful gift for any occasion.",
     tag: 'New'
   },
   {
@@ -136,14 +144,6 @@ export const FEATURED_PRODUCTS: Product[] = [
     tag: 'New'
   },
   {
-    id: '17',
-    name: "Personalized Love Story Photo Frame",
-    category: "Anniversary Frames",
-    image: loveStoryFrame,
-    description: "Celebrate your unique journey with this customized love story frame, perfect for anniversaries and special dates.",
-    tag: 'New'
-  },
-  {
     id: '18',
     name: "Romantic Couple Photo Frame",
     category: "Couple Mini Frames",
@@ -151,6 +151,4 @@ export const FEATURED_PRODUCTS: Product[] = [
     description: "A perfect keepsake for couples to cherish their special moments forever.",
     tag: 'New'
   },
-
-
 ];
