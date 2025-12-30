@@ -117,6 +117,10 @@ export const Home = () => {
                                         <img
                                             src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&q=80&w=800"
                                             alt="Couple Frame"
+                                            width="800"
+                                            height="600"
+                                            fetchPriority="high"
+                                            loading="eager"
                                             style={{ width: '100%', height: 'auto', display: 'block' }}
                                         />
                                     </div>
@@ -293,6 +297,9 @@ export const Home = () => {
                                         <img
                                             src={product.image}
                                             alt={product.name}
+                                            loading="lazy"
+                                            width="300"
+                                            height="300"
                                             style={{
                                                 position: 'absolute',
                                                 top: 0,
