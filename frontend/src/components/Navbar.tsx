@@ -7,7 +7,7 @@ import { QuoteModal } from './QuoteModal';
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(() => window.scrollY > 20);
     const [showQuoteModal, setShowQuoteModal] = useState(false);
     const location = useLocation();
 

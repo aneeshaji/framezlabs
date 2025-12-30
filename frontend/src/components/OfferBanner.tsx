@@ -3,7 +3,9 @@ import { X, Gift, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const OfferBanner = () => {
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(() => {
+        return !localStorage.getItem('offerBannerDismissed');
+    });
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
         hours: 0,
@@ -16,12 +18,6 @@ export const OfferBanner = () => {
     offerEndDate.setDate(offerEndDate.getDate() + 7);
 
     useEffect(() => {
-        // Check if user has dismissed the banner
-        const dismissed = localStorage.getItem('offerBannerDismissed');
-        if (dismissed) {
-            setIsVisible(false);
-        }
-
         // Countdown timer
         const timer = setInterval(() => {
             const now = new Date().getTime();
