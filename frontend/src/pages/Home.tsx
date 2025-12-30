@@ -97,12 +97,7 @@ export const Home = () => {
                             </motion.div>
 
                             {/* Hero Image */}
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                style={{ position: 'relative' }}
-                            >
+                            <div style={{ position: 'relative' }}>
                                 <motion.div
                                     variants={floating}
                                     animate="animate"
@@ -150,7 +145,7 @@ export const Home = () => {
                                         </div>
                                     </motion.div>
                                 </motion.div>
-                            </motion.div>
+                            </div>
 
                         </div>
                     </div>

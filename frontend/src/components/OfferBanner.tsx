@@ -54,8 +54,6 @@ export const OfferBanner = () => {
     return (
         <AnimatePresence>
             <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 style={{
                     background: 'linear-gradient(135deg, #E07A5F 0%, #d66a4f 100%)',
