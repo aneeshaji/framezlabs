@@ -38,7 +38,7 @@ export const ProductDetail = () => {
                             alt={product.name}
                             style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                             onError={(e) => {
-                                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&q=80&w=800';
+                                (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1554188248-986adbb73be4?auto=format&fit=crop&q=80&w=800&fm=webp';
                             }}
                         />
                     </motion.div>

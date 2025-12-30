@@ -154,7 +154,7 @@ export const About = () => {
                                     zIndex: 0
                                 }} />
                                 <img
-                                    src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800"
+                                    src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800&fm=webp"
                                     alt="Craftsmanship"
                                     style={{
                                         borderRadius: 'var(--radius-lg)',

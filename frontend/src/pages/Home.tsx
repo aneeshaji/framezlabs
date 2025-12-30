@@ -115,7 +115,7 @@ export const Home = () => {
                                         border: '8px solid white'
                                     }}>
                                         <img
-                                            src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&q=80&w=800"
+                                            src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&q=80&w=800&fm=webp"
                                             alt="Couple Frame"
                                             width="800"
                                             height="600"
