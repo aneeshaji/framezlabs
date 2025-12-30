@@ -99,8 +99,10 @@ function App() {
       <ScrollToTop />
       <SEO />
       <div className="app" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <OfferBanner />
-        <Navbar />
+        <div style={{ position: 'sticky', top: 0, zIndex: 1000 }}>
+          <OfferBanner />
+          <Navbar />
+        </div>
         <StickyWhatsApp />
         <CallbackButton />
         <main style={{ flex: 1 }}>

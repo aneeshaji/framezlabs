@@ -55,7 +55,6 @@ export const OfferBanner = () => {
                     background: 'linear-gradient(135deg, #E07A5F 0%, #d66a4f 100%)',
                     color: 'white',
                     position: 'relative',
-                    zIndex: 1000,
                     overflow: 'hidden'
                 }}
             >
