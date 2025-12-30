@@ -104,7 +104,7 @@ export const OfferBanner = () => {
                                 color: '#FFF9F0',
                                 textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)'
                             }}>
-                                On all custom photo frames - Limited time only!
+                                On frames & gift hampers - Limited time only!
                             </p>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ export const OfferBanner = () => {
 
                     {/* CTA Button */}
                     <a
-                        href="https://wa.me/919995064344?text=Hi! I'm interested in the BUY 1 GET 1 FREE offer on custom photo frames. Please share more details."
+                        href="https://wa.me/919995064344?text=Hi! I'm interested in the BUY 1 GET 1 FREE offer on frames & gift hampers. Please share more details."
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
