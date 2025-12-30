@@ -211,12 +211,13 @@ export const Home = () => {
                         @media (max-width: 768px) {
                             .trust-grid {
                                 flex-direction: column;
-                                align-items: flex-start; /* Align left for better readability on mobile or center if preferred */
+                                align-items: flex-start;
                                 gap: 2rem;
                             }
                             .trust-item {
                                 width: 100%;
                                 max-width: 100%;
+                                flex: 0 0 auto;
                             }
                         }
                     `}</style>
