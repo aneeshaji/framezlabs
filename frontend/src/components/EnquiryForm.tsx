@@ -104,8 +104,8 @@ export const EnquiryForm = ({ productName = "", minimal = false }: { productName
 
                         <div>
                             <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.9rem', fontWeight: 500 }}>Phone Number</label>
-                            <div className="flex" style={{ alignItems: 'center', border: '1px solid #ddd', borderRadius: 'var(--radius-sm)', overflow: 'hidden' }}>
-                                <span style={{ backgroundColor: '#f4f4f4', padding: '0.8rem', color: '#555', borderRight: '1px solid #ddd' }}>+91</span>
+                            <div className="flex" style={{ alignItems: 'center', border: '1px solid #ddd', borderRadius: 'var(--radius-sm)', overflow: 'hidden', background: 'white' }}>
+                                <span style={{ backgroundColor: '#f4f4f4', padding: '0.8rem', color: '#555', borderRight: '1px solid #ddd', minWidth: '3.5rem', textAlign: 'center' }}>+91</span>
                                 <input
                                     required
                                     type="tel"
@@ -115,7 +115,7 @@ export const EnquiryForm = ({ productName = "", minimal = false }: { productName
                                     value={formData.phone}
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                     disabled={status === 'loading'}
-                                    style={{ flex: 1, padding: '0.8rem', border: 'none', fontSize: '1rem', outline: 'none' }}
+                                    style={{ flex: 1, padding: '0.8rem', border: 'none', fontSize: '1rem', outline: 'none', width: '100%', minWidth: 0 }}
                                 />
                             </div>
                         </div>

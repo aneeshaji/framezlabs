@@ -163,13 +163,13 @@ export const Home = () => {
                     borderBottom: '1px solid rgba(0,0,0,0.03)'
                 }}>
                     <div className="container">
-                        <div className="flex justify-center items-center flex-wrap" style={{ gap: 'clamp(1rem, 5vw, 4rem)' }}>
+                        <div className="trust-grid">
                             {[
                                 { icon: <ShieldCheck size={24} />, title: "100% Quality Guaranteed", desc: "Rigorous quality checks for every frame" },
                                 { icon: <Truck size={24} />, title: "Safe Pan-India Shipping", desc: "Premium packaging for zero-damage delivery" },
                                 { icon: <Sparkles size={24} />, title: "Handcrafted with Love", desc: "Expert craftsmanship in every detail" }
                             ].map((trust, i) => (
-                                <div key={i} className="flex items-start gap-md" style={{ flex: '1 1 200px', maxWidth: '350px' }}>
+                                <div key={i} className="trust-item flex items-start gap-md">
                                     <motion.div
                                         variants={iconBounce}
                                         whileInView="animate"
@@ -182,7 +182,8 @@ export const Home = () => {
                                             boxShadow: 'var(--shadow-glow)',
                                             display: 'flex',
                                             alignItems: 'center',
-                                            justifyContent: 'center'
+                                            justifyContent: 'center',
+                                            flexShrink: 0
                                         }}
                                     >
                                         {trust.icon}
@@ -195,6 +196,30 @@ export const Home = () => {
                             ))}
                         </div>
                     </div>
+                    <style>{`
+                        .trust-grid {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 4rem;
+                        }
+                        .trust-item {
+                            flex: 1 1 250px;
+                            max-width: 350px;
+                        }
+                        @media (max-width: 768px) {
+                            .trust-grid {
+                                flex-direction: column;
+                                align-items: flex-start; /* Align left for better readability on mobile or center if preferred */
+                                gap: 2rem;
+                            }
+                            .trust-item {
+                                width: 100%;
+                                max-width: 100%;
+                            }
+                        }
+                    `}</style>
                 </div>
                 {/* Best Sellers Section */}
                 <section className="section-padding" style={{ backgroundColor: 'white' }}>
@@ -715,10 +740,10 @@ export const Home = () => {
                                         "Safe Pan-India Shipping"
                                     ].map((text, i) => (
                                         <li key={i} className="flex items-center gap-sm" style={{ fontWeight: 600, color: 'var(--color-teal)' }}>
-                                            <div style={{ backgroundColor: 'rgba(224, 122, 95, 0.1)', padding: '0.3rem', borderRadius: '50%', display: 'flex' }}>
+                                            <div style={{ backgroundColor: 'rgba(224, 122, 95, 0.1)', padding: '0.3rem', borderRadius: '50%', display: 'flex', flexShrink: 0 }}>
                                                 <CheckCircle size={18} className="text-gold" />
                                             </div>
-                                            {text}
+                                            <span>{text}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -750,6 +775,8 @@ export const Home = () => {
 
                         .enquiry-form-container {
                             padding: 2.5rem;
+                            width: 100%;
+                            box-sizing: border-box;
                         }
 
                         @media (max-width: 1024px) {
@@ -758,10 +785,10 @@ export const Home = () => {
                                 grid-template-columns: 1fr;
                             }
                             .custom-concept-section {
-                                text-align: center;
+                                text-align: left; /* Kept left aligned for better readability on tablet */
                             }
                             .custom-concept-section ul {
-                                align-items: center;
+                                align-items: flex-start;
                                 margin-bottom: 3rem;
                             }
                         }
@@ -771,8 +798,8 @@ export const Home = () => {
                                 gap: 2rem;
                             }
                             .custom-concept-section {
-                                padding-top: 4rem;
-                                padding-bottom: 4rem;
+                                padding-top: 3rem;
+                                padding-bottom: 3rem;
                             }
                             .enquiry-form-container {
                                 padding: 1.5rem;
