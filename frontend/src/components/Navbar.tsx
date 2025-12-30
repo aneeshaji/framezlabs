@@ -145,7 +145,6 @@ export const Navbar = () => {
                         color: 'var(--color-dark)',
                         cursor: 'pointer',
                         padding: '0.5rem',
-                        display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}
