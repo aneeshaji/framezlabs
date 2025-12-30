@@ -36,9 +36,6 @@ export const Navbar = () => {
         <nav
             className={`navbar ${scrolled ? 'scrolled' : ''}`}
             style={{
-                position: 'relative',
-                left: 0,
-                right: 0,
                 backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.85)' : 'white',
                 backdropFilter: scrolled ? 'blur(20px)' : 'none',
                 WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',

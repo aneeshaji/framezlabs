@@ -99,8 +99,10 @@ export const OfferBanner = () => {
                             </h3>
                             <p style={{
                                 margin: 0,
-                                fontSize: '0.85rem',
-                                opacity: 0.95
+                                fontSize: '0.9rem',
+                                fontWeight: 700,
+                                color: '#FFF9F0',
+                                textShadow: '0 2px 4px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)'
                             }}>
                                 On all custom photo frames - Limited time only!
                             </p>
