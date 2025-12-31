@@ -6,6 +6,7 @@ import { EnquiryForm } from '../components/EnquiryForm';
 import { QuoteModal } from '../components/QuoteModal';
 import { FAQ } from '../components/FAQ';
 import { NewYearBanner } from '../components/NewYearBanner';
+import { NewYearHeroSlider } from '../components/NewYearHeroSlider';
 import { SEO } from '../components/SEO';
 import { TrustBadges } from '../components/TrustBadges';
 import { FEATURED_PRODUCTS } from '../data/products';
@@ -33,123 +34,8 @@ export const Home = () => {
                 animate="animate"
                 exit="exit"
             >
-                {/* Hero Section */}
-                <section
-                    className="hero"
-                    style={{
-                        minHeight: '65vh', // Reduced height as requested
-                        display: 'flex',
-                        alignItems: 'center',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        backgroundColor: 'var(--color-bg-main)'
-                    }}
-                >
-
-                    {/* Mesh Gradient Background - Dark Mode Optimized */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '-20%',
-                        right: '-10%',
-                        width: '600px',
-                        height: '600px',
-                        background: 'radial-gradient(circle, rgba(255,196,155,0.15) 0%, rgba(2,6,23,0) 70%)',
-                        borderRadius: '50%',
-                        filter: 'blur(80px)',
-                        zIndex: 0
-                    }} />
-                    <div style={{
-                        position: 'absolute',
-                        bottom: '-10%',
-                        left: '-10%',
-                        width: '500px',
-                        height: '500px',
-                        background: 'radial-gradient(circle, rgba(30,41,59,0.5) 0%, rgba(2,6,23,0) 70%)',
-                        borderRadius: '50%',
-                        filter: 'blur(60px)',
-                        zIndex: 0
-                    }} />
-
-                    <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                        <div className="grid grid-cols-1 grid-cols-2" style={{ gap: '4rem', alignItems: 'center' }}>
-
-                            {/* Text Content */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8 }}
-                            >
-                                <h1 style={{ marginBottom: '1.5rem', color: 'var(--color-dark)' }}>
-                                    Frame Your <br />
-                                    <span style={{ color: 'var(--color-teal)', fontStyle: 'italic' }}>Moments</span> Forever.
-                                </h1>
-                                <p style={{ fontSize: '1.2rem', color: 'var(--color-gray)', marginBottom: '2.5rem', maxWidth: '500px' }}>
-                                    We create your moments with premium quality customized frames, gift hampers, and photo books. The perfect gift for your loved ones.
-                                </p>
-                                <div className="flex gap-md">
-                                    <a href="#enquiry" className="btn btn-primary">
-                                        Get Started
-                                    </a>
-                                    <Link to="/products" className="btn btn-outline">
-                                        View Products
-                                    </Link>
-                                </div>
-                            </motion.div>
-
-                            {/* Hero Image */}
-                            <div style={{ position: 'relative' }}>
-                                <motion.div
-                                    variants={floating}
-                                    animate="animate"
-                                >
-                                    <div style={{
-                                        position: 'relative',
-                                        borderRadius: 'var(--radius-lg)',
-                                        overflow: 'hidden',
-                                        boxShadow: 'var(--shadow-gold)',
-                                        border: '8px solid white'
-                                    }}>
-                                        <img
-                                            src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?auto=format&fit=crop&q=80&w=800&fm=webp"
-                                            alt="Couple Frame"
-                                            width="800"
-                                            height="600"
-                                            fetchPriority="high"
-                                            loading="eager"
-                                            style={{ width: '100%', height: 'auto', display: 'block' }}
-                                        />
-                                    </div>
-                                    {/* Floating Badge */}
-                                    <motion.div
-                                        animate={{ y: [0, -10, 0] }}
-                                        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                                        style={{
-                                            position: 'absolute',
-                                            bottom: '10%',
-                                            left: '-10%',
-                                            backgroundColor: 'white',
-                                            padding: '1rem',
-                                            borderRadius: 'var(--radius-md)',
-                                            boxShadow: 'var(--shadow-lg)',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '0.5rem'
-                                        }}
-                                    >
-                                        <div style={{ backgroundColor: 'var(--color-gold-light)', padding: '0.5rem', borderRadius: '50%' }}>
-                                            <Star size={20} className="text-gold" fill="currentColor" />
-                                        </div>
-                                        <div>
-                                            <h5 style={{ margin: 0, fontSize: '0.9rem' }}>Top Rated</h5>
-                                            <span style={{ fontSize: '0.8rem', color: '#666' }}>Trusted by 500+ Customers</span>
-                                        </div>
-                                    </motion.div>
-                                </motion.div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
+                {/* New Year Hero Slider */}
+                <NewYearHeroSlider />
 
                 {/* New Year Offer Banner */}
                 <NewYearBanner />
