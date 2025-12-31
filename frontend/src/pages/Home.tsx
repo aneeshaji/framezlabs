@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, Heart, ShieldCheck, Truck, Gift, CheckCircle, MessageCircle, Sparkles, Baby, Cake, Users, Frame, Image as ImageIcon } from 'lucide-react';
+import { ArrowRight, Heart, ShieldCheck, Truck, Gift, CheckCircle, MessageCircle, Sparkles, Baby, Cake, Users, Frame, Image as ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { EnquiryForm } from '../components/EnquiryForm';
 import { QuoteModal } from '../components/QuoteModal';
@@ -10,7 +10,7 @@ import { NewYearHeroSlider } from '../components/NewYearHeroSlider';
 import { SEO } from '../components/SEO';
 import { TrustBadges } from '../components/TrustBadges';
 import { FEATURED_PRODUCTS } from '../data/products';
-import { pageTransition, fadeInUp, staggerContainer, scaleIn, floating, iconBounce, iconJiggle } from "../utils/animations";
+import { pageTransition, fadeInUp, staggerContainer, scaleIn, iconBounce, iconJiggle } from "../utils/animations";
 
 export const Home = () => {
     const [isQuoteOpen, setIsQuoteOpen] = useState(false);
