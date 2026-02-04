@@ -5,7 +5,6 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ScrollToTopButton } from './components/ScrollToTopButton';
-import { OfferBanner } from './components/OfferBanner';
 import { CallbackButton } from './components/CallbackButton';
 import { Loader2 } from 'lucide-react';
 
@@ -99,7 +98,6 @@ function App() {
       <ScrollToTop />
       <SEO />
       <div style={{ position: 'sticky', top: 0, zIndex: 1000 }}>
-        <OfferBanner />
         <Navbar />
       </div>
       <div className="app" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
