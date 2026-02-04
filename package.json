@@ -1,0 +1,14 @@
+{
+  "name": "framezlabs-deployment",
+  "version": "1.0.0",
+  "description": "Deployment tools for FramezLabs",
+  "scripts": {
+    "merge": "node merge-frontend-to-public.js",
+    "build-frontend": "cd frontend && npm run build && cd ..",
+    "build-backend": "cd backend && composer install --no-dev --optimize-autoloader && cd ..",
+    "deploy": "npm run build-frontend && npm run merge"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}
